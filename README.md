@@ -4,7 +4,7 @@
 # \<Project title\>
  > Your author list below should include links to all members GitHub (remove existing author).
 
- > Authors: \<[Ryan Nguyen](https://github.com/ryanxnguy), [Vansh Nagpal](https://github.com/vngpl), [Jingbo Su](https://github.com/sujingbo0217)\>
+ > Authors: \<[Ryan Nguyen](https://github.com/ryanxnguy), [Vansh Nagpal](https://github.com/vngpl), [Jingbo Su](https://github.com/sujingbo0217), [Nicholas Castellanos](https://github.com/)\>
 
  > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list and start thinking about the features you will implement. If you want to propose your own original idea, you will have to contact your instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings.
 
@@ -18,9 +18,17 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
+ > > This project is interesting to us because it will give us a chance to be creative in developing a video game. It will also help improve our programming skills by better understanding topics such as object-oriented programming, input/output verification, and debugging/testing.
+
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ > > The language we plan to use for this project is C++. Some tools may include what we have learned so far such as the GNU debugger (GDB), Valgrind, VS Code for editing/developing, and Github for version control.
+
  > * What will be the input/output of your project?
+ > > The input/output for the project will be the way a player interacts with their character and the world which may involve combating or communicating with other characters. For example, the user will be able to select their character class, weapons, armor, paths, and items. The output will most likely be text-based and depend on the decisions that the user makes in the game and may include things such as dialogue, combat outcomes, and other world events based on the user's decisions.
+
  > * What are the features that the project provides?
+ > > The features that the project will provide includes character customization and design through a variety of objects/items such as weapons, armor, and equipment. In addition to the customization, the user will be able to engage in dialogue and interact with other characters, make decisions, engange in combat with a chance to level up and improve their character.
+
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted.
  >
  > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
