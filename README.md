@@ -12,7 +12,6 @@ The input/output for the project will be the way a player interacts with their c
 The features that the project will provide includes character customization and design through a variety of objects/items such as weapons, armor, and equipment. In addition to the customization, the user will be able to engage in dialogue and interact with other characters, make decisions, engange in combat with a chance to level up and improve their character.
 
 ## User Interface Specification
- > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from the User Interface Design Document Template of CMSC 345 at the University of Maryland Global Campus)
 
 ### Navigation Diagram
 [Navigation Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png)
