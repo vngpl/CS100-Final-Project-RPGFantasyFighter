@@ -15,7 +15,7 @@ The features that the project will provide includes character customization and 
  > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from the User Interface Design Document Template of CMSC 345 at the University of Maryland Global Campus)
 
 ### Navigation Diagram
-> Diagram illustrating how the user can navigate from one screen to another. [Diagram](https://app.creately.com/d/VdHQSL3G7PU/edit). Diagram represents the different screens the user will move between and includes confirmations, buttons, and viewing for switching to the next screen.
+> Diagram illustrating how the user can navigate from one screen to another. [Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png). Diagram represents the different screens the user will move between and includes confirmations, buttons, and viewing for switching to the next screen.
 
 ### Screen Layouts
 [General Screen Layout](https://docs.google.com/presentation/d/1J9MkQOFKmCZuKEjlQRDTo65_aweelnR4qWAHOjOCGjk/edit?usp=sharing)
