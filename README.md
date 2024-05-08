@@ -25,7 +25,8 @@ Diagram illustrating how the user can navigate from one screen to another. The d
 The general layout will consist of prompts displayed in the game window. The user will be able to act based on the options provided by each prompt. Input may mainly be in the form of clickable buttons, however, numerical and text inputs may also be used to allow for communication with/between the user and the game environment. The user will be able to provide feedback based on the options that are chosen. The layout outlines some general features of the game such as character creation/customization, the combat system, leveling system, and interactions with objects in the game.
 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+[Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Class%20Diagram.png)
+Diagram illustrating main classes of project. The diagram represents the main game class and other classes and subclasses that will be used within the game. Classes include attributes and operations. 
 
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
