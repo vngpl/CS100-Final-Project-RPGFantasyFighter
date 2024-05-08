@@ -15,7 +15,7 @@ The features that the project will provide includes character customization and 
  > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from the User Interface Design Document Template of CMSC 345 at the University of Maryland Global Campus)
 
 ### Navigation Diagram
-[Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png)
+[Navigation Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png)
 
 Diagram illustrating how the user can navigate from one screen to another. The diagram represents the different screens the user will move between and includes confirmations, buttons, and viewing for switching to the next screen.
 
@@ -25,7 +25,8 @@ Diagram illustrating how the user can navigate from one screen to another. The d
 The general layout will consist of prompts displayed in the game window. The user will be able to act based on the options provided by each prompt. Input may mainly be in the form of clickable buttons, however, numerical and text inputs may also be used to allow for communication with/between the user and the game environment. The user will be able to provide feedback based on the options that are chosen. The layout outlines some general features of the game such as character creation/customization, the combat system, leveling system, and interactions with objects in the game.
 
 ## Class Diagram
-[Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Class%20Diagram.png)
+[Class Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Class%20Diagram.png)
+
 Diagram illustrating main classes of project. The diagram represents the main game class and other classes and subclasses that will be used within the game. Classes include attributes and operations. 
 
  > ## Phase III
