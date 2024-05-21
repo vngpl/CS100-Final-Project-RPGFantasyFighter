@@ -8,6 +8,7 @@ class Assassin : public Character {
 
     public:
         Assassin(const std::string&, int, double, double);
+        void attack(Character&) override;
         // IMPLEMENT ATTACK FUNCTIONS
 };
 

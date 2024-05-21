@@ -8,6 +8,7 @@ class Wizard : public Character {
 
     public:
         Wizard(const std::string&, int, double, double);
+        void attack(Character&) override;
         // IMPLEMENT ATTACK FUNCTIONS
 };
 

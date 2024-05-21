@@ -1,21 +1,27 @@
 #ifndef __CHARACTER_HPP__
 #define __CHARACTER_HPP__
 
-#include <iostream>
 #include <string>
 // #include "ATTACK_TYPES"
 
+enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
+
 class Character {
     private:
+        CharacterType type;
         std::string name;
-        double health;
+        int health;
         double experience;
-        double
+        double attackStrength;
     public:
-        Character(const std::string&, int, double, double);
-        std::string getName() const;
-        double getHealth() const;
+        Character(CharacterType,  const std::string&, int, double, double);
+        CharacterType getType() const; 
+        const std::string& getName() const;
+        int getHealth() const;
         double getExperience() const;
+        double getAttackStrength() const;
+        bool isAlive() const;
+        virtual void attack(Character&) = 0;
 };
 
 #endif

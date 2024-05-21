@@ -8,6 +8,7 @@ class Warrior : public Character {
 
     public:
         Warrior(const std::string&, int, double, double);
+        void attack(Character&) override;
         // IMPLEMENT ATTACK FUNCTIONS
 };
 
