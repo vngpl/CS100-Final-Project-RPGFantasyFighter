@@ -24,7 +24,7 @@ Diagram illustrating how the user can navigate from one screen to another. The d
 The general layout will consist of prompts displayed in the game window. The user will be able to act based on the options provided by each prompt. Input may mainly be in the form of clickable buttons, however, numerical and text inputs may also be used to allow for communication with/between the user and the game environment. The user will be able to provide feedback based on the options that are chosen. The layout outlines some general features of the game such as character creation/customization, the combat system, leveling system, and interactions with objects in the game.
 
 ## Class Diagram
-[Class Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Class%20Diagram.png)
+![Class Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Class%20Diagram.png)
 
 Diagram illustrating main classes of project. The diagram represents the main game class and other classes and subclasses that will be used within the game. Classes include attributes and operations. 
 
