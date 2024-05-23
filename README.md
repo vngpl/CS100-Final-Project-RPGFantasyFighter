@@ -14,7 +14,7 @@ The features that the project will provide includes character customization and 
 ## User Interface Specification
 
 ### Navigation Diagram
-[Navigation Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png)
+![Navigation Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png)
 
 Diagram illustrating how the user can navigate from one screen to another. The diagram represents the different screens the user will move between and includes confirmations, buttons, and viewing for switching to the next screen.
 
