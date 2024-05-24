@@ -8,6 +8,7 @@ enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
 
 class Character {
     private:
+        // add maxHealth variable
         CharacterType type;
         std::string name;
         int health;
@@ -15,6 +16,7 @@ class Character {
         double experience = 0.0;
         double attackStrength;
     public:
+    
         Character(CharacterType,  const std::string&, int, double);
         CharacterType getType() const; 
         const std::string& getName() const;
@@ -22,7 +24,7 @@ class Character {
         int getLevel() const;
         double getExperience() const;
         double getAttackStrength() const;
-        bool isAlive() const;
+        bool isDead() const;
         virtual void attack(Character&) = 0;
 };
 
