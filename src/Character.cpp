@@ -1,7 +1,7 @@
 #include "header/Character.hpp"
 
-Character::Character(CharacterType type, const std::string& name, double health, double experience, double attackStrength) 
-    : type(type), name(name), health(health), experience(experience), attackStrength(attackStrength) { }
+Character::Character(CharacterType type, const std::string& name, double health, double attackStrength) 
+    : type(type), name(name), health(health), attackStrength(attackStrength) { }
 
 CharacterType Character::getType() const { return type; }
 

@@ -7,7 +7,7 @@ class Assassin : public Character {
     private:
 
     public:
-        Assassin(const std::string&, int, double, double);
+        Assassin(const std::string&, int, double);
         void attack(Character&) override;
         // IMPLEMENT ATTACK FUNCTIONS
 };

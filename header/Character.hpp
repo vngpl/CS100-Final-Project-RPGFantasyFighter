@@ -11,11 +11,11 @@ class Character {
         CharacterType type;
         std::string name;
         int health;
-        int level = 0;
-        double experience;
+        int level = 5;
+        double experience = 0.0;
         double attackStrength;
     public:
-        Character(CharacterType,  const std::string&, int, double, double);
+        Character(CharacterType,  const std::string&, int, double);
         CharacterType getType() const; 
         const std::string& getName() const;
         int getHealth() const;
