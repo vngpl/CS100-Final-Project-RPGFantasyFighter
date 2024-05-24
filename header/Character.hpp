@@ -11,6 +11,7 @@ class Character {
         CharacterType type;
         std::string name;
         int health;
+        int level = 0;
         double experience;
         double attackStrength;
     public:
@@ -18,6 +19,7 @@ class Character {
         CharacterType getType() const; 
         const std::string& getName() const;
         int getHealth() const;
+        int getLevel() const;
         double getExperience() const;
         double getAttackStrength() const;
         bool isAlive() const;
