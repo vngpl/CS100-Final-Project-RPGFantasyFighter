@@ -27,6 +27,10 @@ The general layout will consist of prompts displayed in the game window. The use
 ![Class Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Class%20Diagram.png)
 
 Diagram illustrating main classes of project. The diagram represents the main game class and other classes and subclasses that will be used within the game. Classes include attributes and operations. 
+Solid Design Principles:
+1. Single Responsibility: The character class, for example, has only one responsibility. It will only have the characteristics of one of its subclasses, from warrior, wizard, or assassin.
+2. Liskov Substitution: The subclasses of the item class, for example, behave similarly to their parent class. They will have the same functions as the parent class, such as getName.
+3. Interface Segregation: The subclasses of the character class, for example, do not have unnecessary functions that would not fit with their respective class. Each subclass has its own attack, which will do a unique amount of damage and display its own message. 
 
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
