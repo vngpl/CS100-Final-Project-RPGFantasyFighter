@@ -7,6 +7,7 @@ enum EnemyType {MONSTER};
 
 class Enemy {
     private:
+        EnemyType type;
         string name;
         int health;
         int level;
