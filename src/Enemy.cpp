@@ -1,9 +1,9 @@
 #include "header/Enemy.hpp"
 
-Enemy::Enemy(const std::string& name, int health, int level, double attackStrength)
-    : name(name), health(health), level(level), attackStrength(attackStrength) { }
+Enemy::Enemy(EnemyType type, const std::string& name, int health, int level, double attackStrength)
+    : type(type), name(name), health(health), level(level), attackStrength(attackStrength) { }
 
-EnemyType Enemy::getEnemyType() const { return EnemyType; }
+EnemyType Enemy::getEnemyType() const { return type; }
 
 const std::string& Enemy::getName() const { return name; }
 
