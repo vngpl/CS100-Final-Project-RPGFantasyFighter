@@ -8,14 +8,14 @@ enum EnemyType {MONSTER};
 class Enemy {
     private:
         EnemyType type;
-        string name;
+        std::string name;
         int health;
         int level;
         double attackStrength;
     public:
         Enemy(EnemyType, const std::string&, int, int, double);
         EnemyType getEnemyType() const;
-        const string& getName() const;
+        const std::string& getName() const;
         int getHealth() const;
         int getLevel() const;
         double getAttackStrength() const;
