@@ -4,15 +4,13 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
-
 class Item{
 public:
-    Item(const string& name);
-    string getName() const;
+    Item(const std::string& name);
+    std::string getName() const;
 
 private:
-    string name;
+    std::string name; 
 };
 
 class Weapon : public Item{
@@ -48,20 +46,4 @@ private:
     int strength;
 };
 
-class Armor : public Item {
-public:
-    enum class Type {
-        Light,
-        Heavy
-    };
-
-    Armor(Type type, int protection);
-    Type getType() const;
-    int getProtection() const;
-
-private:
-    Type type;
-    int protection;
-};
-
-#endif 
+#endif

@@ -1,11 +1,10 @@
 #include "../header/Item.h"
 #include <iostream>
 
-using namespace std;
 
-Item::Item(const string& name) : name(name) {}
+Item::Item(const std::string& name) : name(name) {}
 
-string Item::getName() const {
+std::string Item::getName() const {
     return name;
 }
 
@@ -31,14 +30,4 @@ Potion::Type Potion::getType() const {
 
 int Potion::getStrength() const {
     return strength;
-}
-
-Armor::Armor(Type type, int protection) : Item("Armor"), type(type), protection(protection) {}
-
-Armor::Type Armor::getType() const {
-    return type;
-}
-
-int Armor::getProtection() const {
-    return protection;
 }

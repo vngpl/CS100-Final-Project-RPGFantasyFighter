@@ -1,15 +1,11 @@
 #include "Inventory.h"
 
 void Inventory::addItem(Item* item) {
-    items.push_back(item);
+    if (item->getName() == "Weapon") {
+        items.at(0) = std::move(item);
+    } 
+    else if (item->getName() == "Potion") {
+        items.at(1) = item; 
+    }
 }
 
-bool Inventory::removeItem(const string& itemName) {
-    for (auto it = items.begin(); it != items.end(); ++it) {
-        if ((*it)->getName() == itemName) {
-            items.erase(it);
-            return true;
-        }
-    }
-    return false;
-}

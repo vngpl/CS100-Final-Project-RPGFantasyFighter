@@ -7,10 +7,11 @@
 class Inventory {
 public:
     void addItem(Item* item);
-    bool removeItem(const string& itemName);
+
+    Inventory() : items(2) {}
 
 private:
-    vector<Item*> items;
+    std::vector<Item*> items;
 };
 
 #endif // INVENTORY_H
