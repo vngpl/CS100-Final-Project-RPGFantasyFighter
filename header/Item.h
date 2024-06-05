@@ -48,4 +48,20 @@ private:
     int strength;
 };
 
+class Armor : public Item {
+public:
+    enum class Type {
+        Light,
+        Heavy
+    };
+
+    Armor(Type type, int protection);
+    Type getType() const;
+    int getProtection() const;
+
+private:
+    Type type;
+    int protection;
+};
+
 #endif 

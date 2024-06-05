@@ -32,3 +32,13 @@ Potion::Type Potion::getType() const {
 int Potion::getStrength() const {
     return strength;
 }
+
+Armor::Armor(Type type, int protection) : Item("Armor"), type(type), protection(protection) {}
+
+Armor::Type Armor::getType() const {
+    return type;
+}
+
+int Armor::getProtection() const {
+    return protection;
+}
