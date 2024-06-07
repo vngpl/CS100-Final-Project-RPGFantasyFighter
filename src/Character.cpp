@@ -29,7 +29,54 @@ void Character::setCoins(int newCoins) { coins = newCoins; }
 void Character::setExperience(double newExperience) { experience = newExperience; }
 void Character::setAttackStrength(double newAttackStrength) { attackStrength = newAttackStrength; }
 
-// void Character::useItem(Item* consumable) { inventory.useItem(consumable); }
+bool Character::inventoryIsEmpty() { return inventory.IsEmpty(); }
+bool Character::inventoryOnlyPotion() { return inventory.OnlyPotion(); }
+bool Character::inventoryOnlyWeapon() { return inventory.OnlyWeapon(); }
+
+void Character::useItem(int itemIndex) {
+    Item item;
+    int newValue = 0;
+
+    item = inventory.getItem(itemIndex);
+    
+    if (static_cast<Weapon>(item)->getType() == Weapon::Type::Sword){
+        if (character->getType() == WARRIOR){
+            newValue = character->getAttackStrength() + static_cast<Weapon>(item)->getDamage() + 15;
+        }
+        else {
+            newValue = character->getAttackStrength() + static_cast<Weapon>(item)->getDamage();
+        }
+        character->setAttackStrength(newValue);
+    }
+    else if (static_cast<Weapon>(item)->getType() == Weapon::Type::Dagger){
+        if (character->getType() == ASSASSIN){
+            newValue = character->getAttackStrength() + static_cast<Weapon>(item)->getDamage() + 15;
+        }
+        else {
+            newValue = character->getAttackStrength() + static_cast<Weapon>(item)->getDamage();
+        }
+        character->setAttackStrength(newValue);
+    }
+    else if (static_cast<Weapon>(item)->getType() == Weapon::Type::Wand){
+        if (character->getType() == WIZARD){
+            newValue = character->getAttackStrength() + static_cast<Weapon>(item)->getDamage() + 15;
+        }
+        else {
+            newValue = character->getAttackStrength() + static_cast<Weapon>(item)->getDamage();
+        }
+        character->setAttackStrength(newValue);
+    }
+    else if (static_cast<Potion>(item)->getType() == Potion::Type::AttackBoost){
+        newValue = character->getAttackStrength() + static_cast<Potion>(item)->getStrength();
+        character->setAttackStrength(newValue);
+    }
+    else if (static_cast<Potion>(item)->getType() == Potion::Type::HealthRecovery){
+        newValue = character->getHealth() + static_cast<Potion>(item)->getStrength();
+        character->setHealth(newValue);
+    }
+
+    inventory.useItem(itemIndex);
+}
 
 bool Character::isDead() const { return getHealth() <= 0; }
 

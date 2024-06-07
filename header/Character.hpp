@@ -5,10 +5,9 @@
 #include "Inventory.hpp"
 // #include "Experience.hpp"
 
-class Character {
-    public:
-        enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
+enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
 
+class Character {
     private:
         int coins;
         Inventory inventory;
@@ -38,6 +37,9 @@ class Character {
         void updateMonsterSlainCount();
         void setAttackStrength(double);
 
+        bool inventoryIsEmpty();
+        bool inventoryOnlyWeapon();
+        bool inventoryOnlyPotion();
         // void useItem(Item*);
 
         bool isDead() const;
