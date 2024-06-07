@@ -2,6 +2,7 @@
 #define __CHARACTER_HPP__
 
 #include <string>
+#include "Inventory.h"
 // #include "ATTACK_TYPES"
 
 enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
@@ -9,6 +10,7 @@ enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
 class Character {
     private:
         // add maxHealth variable
+        Inventory inventory;
         CharacterType type;
         std::string name;
         int health;
@@ -26,6 +28,9 @@ class Character {
         double getAttackStrength() const;
         bool isDead() const;
         virtual void attack(Character&) = 0;
+
+        void useItem(Item*);
+        
 };
 
 #endif

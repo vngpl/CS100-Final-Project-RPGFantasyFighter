@@ -16,3 +16,7 @@ double Character::getExperience() const { return experience; }
 double Character::getAttackStrength() const { return attackStrength; }
 
 bool Character::isDead() const { return getHealth() <= 0; }
+
+void Character::useItem(Item* item) {
+            inventory.useItem(item);
+        }
