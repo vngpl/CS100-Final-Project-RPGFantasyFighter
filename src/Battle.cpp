@@ -1,98 +1,105 @@
 #include "../header/Battle.hpp"
 
-Battle::Battle(Character& _player, Enemy& _enemy) : player(&_player) {
-  enemies.push_back(&_enemy);
-}
+#include <cstdlib>
+#include <ctime>
 
-Battle::Battle(Character& _player, const std::vector<Enemy&>& _enemies) : player(&_player) {
-  for (const auto& e : _enemies) {
-    enemies.push_back(&e);
-  }
-  items = {"Sword", "Potion", "Shield"};
-}
+#include "../header/Display.hpp"
 
+Battle::Battle() {}
 Battle::~Battle() {}
 
-void Battle::startBattle() {
-  int choice;
-  while (true) {
-    std::cout << "1. Fight\n2. Items\n3. Run\nChoose an option: ";
-    std::cin >> choice;
+bool Battle::fight_impl(Character* attacker, Enemy* defender) {
+  int32_t atk_level = attacker->getLevel();
+  int32_t def_level = defender->getLevel();
+  const float atk_rate = get_rate(atk_level, def_level);
+  double atk_strength = attacker->getAttackStrength();
+  atk_strength = std::max<float>(1.0, atk_strength * atk_rate);
+  int32_t def_health = defender->getHealth();
+  int32_t new_health = def_health - static_cast<int32_t>(atk_strength);
+  defender->setHealth(static_cast<int32_t>(new_health));
+  if (new_health < 0) {
+    return true;  // defender is dead
+  }
+  return false;
+}
 
-    switch (choice) {
+bool Battle::fight_impl(Enemy* attacker, Character* defender) {
+  int32_t atk_level = attacker->getLevel();
+  int32_t def_level = defender->getLevel();
+  const float atk_rate = get_rate(atk_level, def_level);
+  double atk_strength = attacker->getAttackStrength();
+  atk_strength = std::max<float>(1.0, atk_strength * atk_rate);
+  int32_t def_health = defender->getHealth();
+  int32_t new_health = def_health - static_cast<int32_t>(atk_strength);
+  defender->setHealth(new_health);
+  if (new_health < 0) {
+    return true;  // defender is dead
+  }
+  return false;
+}
+
+bool Battle::fight(Character* player, const std::vector<Enemy*>& enemies) {
+  bool quit = false;
+  for (const auto& enemy : enemies) {
+    Display::printBattleOptions();
+    switch (option) {
       case 1:
-        // Fight
-        for (Enemy* enemy : enemies) {
-          fight(*player, *enemy);
+        /* fight */
+        {
+          bool anyone_dead = false;
+          bool flip = true;
+          while (anyone_dead) {
+            if (flip) {
+              anyone_dead = fight_impl(player, enemy);
+            } else {
+              anyone_dead = fight_impl(enemy, player);
+              if (anyone_dead) {
+                quit = true;
+              }
+            }
+            flip = !flip;  // role switching
+          }
         }
         break;
       case 2:
-        // Items
-        std::cout << "Available items:\n";
-        for (int i = 0; i < items.size(); ++i) {
-          std::cout << i + 1 << ". " << items[i] << "\n";
-        }
-        std::cout << "Choose an item: ";
-        int itemChoice;
-        std::cin >> itemChoice;
-        if (itemChoice >= 1 && itemChoice <= items.size()) {
-          // useItems(*participants[0]);
-        } else {
-          std::cout << "Invalid choice!\n";
+        /* use items */
+        {
+          Display::printItemOptions(player);
+          player->useItem(itemIntex);
         }
         break;
       case 3:
-        // Run (quit)
-        run();
-        return;
+        /* run */
+        quit = true;
+        break;
       default:
-        std::cout << "Invalid choice!\n";
+        break;
     }
-
-    if (isPlayerDead() || areEnemiesDead()) {
-      break;
+    if (quit) {
+      break;  // leave the battle
     }
   }
-
-  handlePostBattleActions(!isPlayerDead());
 }
 
-void Battle::fight(Character& attacker, Enemy& defender) {
-  // TODO: character attack enemy
+// int32_t Battle::get_option() const {
+//   return option;
+// }
+
+// int32_t Battle::get_item() const {
+//   return itemIndex;
+// }
+
+void Battle::set_option(int32_t op) {
+  option = op;
 }
 
-void Battle::fight(Enemy& attacker, Character& defender) {
-  // TODO: enemy attack back
+void Battle::set_item(int32_t op) {
+  itemIntex = op;
 }
 
-void Battle::useItems(Character& character) {
-  // TODO: Implement item usage logic
-  std::cout << "Using item...\n";
-}
-
-void Battle::run() {
-  std::cout << "Running away from battle...\n";
-}
-
-bool Battle::isPlayerDead() const {
-  // return !participants[0]->isAlive();
-}
-
-bool Battle::areEnemiesDead() const {
-  // for (int i = 1; i < participants.size(); ++i) {
-  //   if (participants[i]->isAlive()) {
-  //     return false;
-  //   }
-  // }
-  return true;
-}
-
-void Battle::handlePostBattleActions(bool playerWon) {
-  if (playerWon) {
-    std::cout << "You won the battle!\n";
-    // TODO: Implement experience and level up logic here
-  } else {
-    std::cout << "You lost the battle!\n";
-  }
-  // TODO: Implement item shop or end game logic here
+float Battle::get_rate(int32_t level_a, int32_t level_b) {
+  std::srand(std::time(nullptr));
+  float rate =
+      0.95 + static_cast<float>(std::rand()) / (static_cast<float>(RAND_MAX / (1.05 - 0.95)));
+  return rate;
 }
