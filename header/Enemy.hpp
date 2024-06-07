@@ -19,8 +19,8 @@ class Enemy {
         int getLevel() const;
         double getAttackStrength() const;
 
-        void setHealth();
-        void setLevel();
+        void setHealth(int);
+        // void setLevel();
         void setAttackStrength();
 };
 
