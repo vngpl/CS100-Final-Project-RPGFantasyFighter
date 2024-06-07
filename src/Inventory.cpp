@@ -3,7 +3,6 @@
 void Inventory::addItem(Item* item) {
     if (dynamic_cast<Weapon*>(item)) {
         items.at(0) = item;
-        //std::cerr << (static_cast<Weapon*>(item)->getType() == Weapon::Type::Sword) << '\n';
     }
     if (dynamic_cast<Potion*>(item)) {
         items.at(1) = item;
