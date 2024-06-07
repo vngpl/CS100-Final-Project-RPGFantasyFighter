@@ -14,6 +14,19 @@ class Display {
         static void printStats();
 
         //Print function headers for Item classes 
+        static void printEmptyInventory();
+        static void printFilledInventory();
+
+        static void printUseSword();
+        static void printUseDagger();
+        static void printUseWand();
+        static void printUseAttackPotion();
+        static void printUseHealthPotion();
+
+        static void printShopItemGeneration();
+        static void printItemBuyFail();
+        static void printItemBuyPass();  
+
 };
 
 

@@ -1,5 +1,4 @@
-#include "../header/Inventory.h"
-#include "header/Character.hpp"
+#include "../header/Inventory.hpp"
 
 void Inventory::addItem(Item* item) {
     // if (item->getName() == "Weapon") {
@@ -10,50 +9,32 @@ void Inventory::addItem(Item* item) {
     // }
     if (dynamic_cast<Weapon*>(item)) {
         items.at(0) = item;
-        std::cerr << (static_cast<Weapon*>(item)->getType() == Weapon::Type::Sword) << '\n';
+        //std::cerr << (static_cast<Weapon*>(item)->getType() == Weapon::Type::Sword) << '\n';
     }
     if (dynamic_cast<Potion*>(item)) {
         items.at(1) = item;
     }
 }
 
-void useItem(Character* character, Item* item){
-    if (static_cast<Weapon*>(item)->getType() == Weapon::Type::Sword){
-        if (character->getType() == WARRIOR){
-            character->attackStrength += static_cast<Weapon*>(item)->getDamage();
-            character->attackStrength += 15;
-        }
-        else{
-            character->attackStrength += static_cast<Weapon*>(item)->getDamage();
-        }
-        delete item; 
-    }
-    else if (static_cast<Weapon*>(item)->getType() == Weapon::Type::Dagger){
-        if (character->getType() == ASSASSIN){
-            character->attackStrength += static_cast<Weapon*>(item)->getDamage();
-            character->attackStrength += 15;
-        }
-        else{
-            character->attackStrength += static_cast<Weapon*>(item)->getDamage();
-        }
-        delete item; 
-    }
-    else if (static_cast<Weapon*>(item)->getType() == Weapon::Type::Wand){
-        if (character->getType() == WIZARD){
-            character->attackStrength += static_cast<Weapon*>(item)->getDamage();
-            character->attackStrength += 15;
-        }
-        else{
-            character->attackStrength += static_cast<Weapon*>(item)->getDamage();
-        }
-        delete item; 
-    }
-    else if (static_cast<Potion*>(item)->getType() == Potion::Type::AttackBoost){
-        character->attackStrength += static_cast<Potion*>(item)->getStrength();
-        delete item; 
-    }
-    else if (static_cast<Potion*>(item)->getType() == Potion::Type::HealthRecovery){
-        character->attackStrength += static_cast<Potion*>(item)->getStrength();
-        delete item; 
-    }
+bool Inventory::IsEmpty() {
+    return (items.at(0) == nullptr && items.at(1) == nullptr);
 }
+
+bool Inventory::OnlyWeapon() {
+    return (items.at(0) != nullptr && items.at(1) == nullptr);
+}
+
+
+bool Inventory::OnlyPotion() {
+    return (items.at(0) == nullptr && items.at(1) != nullptr);
+}
+
+Item* Inventory::getItem(int idx){
+    return items.at(idx);
+}
+
+void Inventory::useItem(int idx){
+    delete items.at(idx);
+    items.at(idx) = nullptr;
+}
+

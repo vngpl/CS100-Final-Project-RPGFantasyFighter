@@ -1,4 +1,4 @@
-#include "../header/Shop.h"
+#include "../header/Shop.hpp"
 
 Shop::Shop() {
     std::srand(static_cast<unsigned int>(time(nullptr)));

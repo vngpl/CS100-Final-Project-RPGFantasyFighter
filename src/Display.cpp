@@ -71,3 +71,15 @@ void Display::printQuit() {
 }
 
 //Print functions for Items classes 
+void printEmptyInventory();
+void printFilledInventory();
+
+void printUseSword();
+void printUseDagger();
+void printUseWand();
+void printUseAttackPotion();
+void printUseHealthPotion();
+
+void printShopItemGeneration();
+void printItemBuyFail();
+void printItemBuyPass();  
