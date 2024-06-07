@@ -17,6 +17,7 @@ bool invalidOption(const std::string& option) {
 
 int main() {
 	Character* player = nullptr;
+	player = new Character(ASSASSIN, 10, 50);
 	std::string option;
 
 	Display::printIntro();
@@ -57,13 +58,13 @@ int main() {
 	// Character Creation
 	switch (std::stoi(option)) {
 		case 1:
-			player = new Assassin;
+			// player = new Character(ASSASSIN);
 			break;
 		case 2:
-			player = new Warrior;
+			// player = new Warrior;
 			break;
 		case 3:
-			player = new Wizard;
+			// player = new Wizard;
 			break;
 	}
 
