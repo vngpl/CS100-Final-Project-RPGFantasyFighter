@@ -14,7 +14,7 @@ The features that the project will provide includes character customization and 
 ## User Interface Specification
 
 ### Navigation Diagram
-[Navigation Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png)
+![Navigation Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png)
 
 Diagram illustrating how the user can navigate from one screen to another. The diagram represents the different screens the user will move between and includes confirmations, buttons, and viewing for switching to the next screen.
 
@@ -24,29 +24,13 @@ Diagram illustrating how the user can navigate from one screen to another. The d
 The general layout will consist of prompts displayed in the game window. The user will be able to act based on the options provided by each prompt. Input may mainly be in the form of clickable buttons, however, numerical and text inputs may also be used to allow for communication with/between the user and the game environment. The user will be able to provide feedback based on the options that are chosen. The layout outlines some general features of the game such as character creation/customization, the combat system, leveling system, and interactions with objects in the game.
 
 ## Class Diagram
-[Class Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Class%20Diagram.png)
+![Class Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Class%20Diagram.png)
 
 Diagram illustrating main classes of project. The diagram represents the main game class and other classes and subclasses that will be used within the game. Classes include attributes and operations. 
-
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
-
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
-
-> During the meeting with your reader you will discuss:
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+Solid Design Principles:
+1. Single Responsibility: The character class, for example, has only one responsibility. It will only have the characteristics of one of its subclasses, from warrior, wizard, or assassin.
+2. Liskov Substitution: The subclasses of the item class, for example, behave similarly to their parent class. They will have the same functions as the parent class, such as getName.
+3. Interface Segregation: The subclasses of the character class, for example, do not have unnecessary functions that would not fit with their respective class. Each subclass has its own attack, which will do a unique amount of damage and display its own message. 
 
 
  > ## Final deliverable
