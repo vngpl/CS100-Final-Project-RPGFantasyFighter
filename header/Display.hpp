@@ -127,8 +127,6 @@ class Display
 			std::cout << "Health potion applied. Health recovered." << std::endl; 
 		}
 
-
-
 		static void printShopGenerateSword(){
 			std::cout << "Sword spawned. Will you buy? Y/N" << std::endl;
 		}
@@ -149,8 +147,6 @@ class Display
 			std::cout << "Health Potion spawned. Will you buy? Y/N" << std::endl;
 		}
 
-
-
 		static void printItemBuyFail(){
 			std::cout << "Not enough coins to buy." << std::endl;
 		}
@@ -158,7 +154,6 @@ class Display
 		static void printItemBuyPass(){
 			std::cout << "Item bought and added to inventory." << std::endl; 
 		}
-
 };
 
 #endif
