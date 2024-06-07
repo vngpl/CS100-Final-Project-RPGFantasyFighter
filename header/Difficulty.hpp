@@ -13,6 +13,7 @@ public:
     pair<double, double> setEasy();
     pair<double, double> setNormal();
     pair<double, double> setHard();
+    void userDifficulty();
 };
 
 #endif
