@@ -8,7 +8,7 @@ using namespace std;
 #define __DIFFICULT_H__
 #include <utility> // for std::pair
 
-class Diffculty {
+class Difficulty {
 public:
     pair<double, double> setEasy();
     pair<double, double> setNormal();
