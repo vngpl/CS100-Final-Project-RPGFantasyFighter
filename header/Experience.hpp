@@ -8,13 +8,21 @@ using namespace std;
 #define __EXP_H__
 
 #include "../header/Character.hpp"
+#include "../header/Enemy.hpp"
+#include "../header/Experience.hpp"
 
-class Experience { //public Character 
+class Experience { 
     private:
-        int level = 5; //GIVEN FROM CHARACTER FILE
+        int level = 5;
         double exp; //GIVEN FROM CHARACTER FILE
-        double expNext = (50.0/24) * (pow(this->level, 3) - 6 * pow(this->level, 2) + (this->level * 17) - 12);
+        int healthXP;
+        int strengthXP;
+        double expNext;
+        int levelMonster; 
+        int healthMonster;
         int skillPoints = 0;
+        Character* character;
+        // Enemy* enemy;
 
     public:
         bool updateLevel();
@@ -22,23 +30,17 @@ class Experience { //public Character
         void pointAssign(int);
 
         Experience() {} // Default constructor
-        Experience(int, double, double);
-        void setNextEXP();
+        Experience(int, double, double, Character*, Enemy*);
+        // void setNextEXP();
         double getEXP();
         double getNextEXP();
         int getLevel();
+        int getLevelMonster();
         int getHP();
+        int getMonsterHealth();
+        void setHPMAX(int);
 
-        int hp;
-        int hpMAX = 100;
-        int attackStrength;
-        int attackStrengthMAX; //GIVEN FROM CHARACTER FILE
-        // int speed;
-        // int speedMAX;
-    //MONSTER
-        int hpMonster = 0;
-        int hpMonsterEXP;
-        // int hpMonsterMAX;
+    
 
 };
 
