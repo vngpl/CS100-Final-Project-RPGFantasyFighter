@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 #include <ctime>
-#include "Item.h"
+#include "../header/Item.h"
 
 class Shop {
 public:
@@ -13,7 +13,6 @@ public:
 private:
     Item* generateRandomWeapon();
     Item* generateRandomPotion();
-    Item* generateRandomArmor();
 };
 
 #endif

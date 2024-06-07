@@ -7,11 +7,12 @@
 class Inventory {
 public:
     void addItem(Item* item);
-
-    Inventory() : items(2) {}
+    void useItem(Character* character, Item* item);
+      
+    Inventory() : items(2, nullptr) {}
 
 private:
     std::vector<Item*> items;
 };
 
-#endif // INVENTORY_H
+#endif 
