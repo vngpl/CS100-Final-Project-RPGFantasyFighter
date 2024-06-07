@@ -43,7 +43,7 @@ class Character {
         // void useItem(Item*);
 
         bool isDead() const;
-        void useItem(int);
+        void useItem(int itemIndex);
 };
 
 #endif
