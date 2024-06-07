@@ -1,15 +1,21 @@
-#include "header/Enemy.hpp"
+#include "../header/Enemy.hpp"
 
-Enemy::Enemy(EnemyType type, const std::string& name, int health, int level, double attackStrength)
-    : type(type), name(name), health(health), level(level), attackStrength(attackStrength) { }
+Enemy::Enemy(EnemyType type, int health, double attackStrength)
+    : type(type), health(health), attackStrength(attackStrength), level(5) { }
 
-EnemyType Enemy::getEnemyType() const { return type; }
-
-const std::string& Enemy::getName() const { return name; }
+const std::string& Enemy::getEnemyType() const {
+    switch (type) {
+        case MONSTER:
+            return "MONSTER"
+        default:
+            return "UNSPECIFIED ENEMY TYPE";
+    }
+}
 
 int Enemy::getHealth() const { return health; }
-
 int Enemy::getLevel() const { return level; }
-
 double Enemy::getAttackStrength() const { return attackStrength; }
 
+void Enemy::setHealth(int newHealth) { health = newHealth; }
+void Enemy::setLevel(int newLevel) { level = newLevel; }
+void Enemy::setAttackStrength(double newAttackStrength) { attackStrength = newAttackStrength; }
