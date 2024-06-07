@@ -91,6 +91,69 @@ class Display
 			std::cout << "Invalid input. Please enter an integer value based on the above options." << std::endl
 					<< std::endl;
 		}
+
+		static void printItemOptions(Character* character){
+			if (character->inventoryIsEmpty()) {
+				std::cout << "Inventory is empty." << std::endl;
+			}
+			else if (character->inventoryOnlyWeapon()) {
+        		std::cout << "You have a weapon." << std::endl;
+    		}	
+			else if (character->inventoryOnlyPotion()) {
+				std::cout << "You have a potion." << std::endl;
+			}
+			else {
+				std::cout << "You have a weapon and a potion." << std::endl;
+			}
+		}	
+
+		static void printUseSword(){
+			std::cout << "Sword equiped! Attack boosted." << std::endl;
+		}
+
+		static void printUseDagger(){
+			std::cout << "Dagger equiped! Attack boosted." << std::endl; 
+		}
+
+		static void printUseWand(){
+			std::cout << "Dagger equiped! Attack boosted." << std::endl;
+		}
+
+		static void printUseAttackPotion(){
+			std::cout << "Attack potion applied. Attack boosted." << std::endl;
+		}
+
+		static void printUseHealthPotion(){
+			std::cout << "Health potion applied. Health recovered." << std::endl; 
+		}
+
+		static void printShopGenerateSword(){
+			std::cout << "Sword spawned. Will you buy? Y/N" << std::endl;
+		}
+
+		static void printShopGenerateDagger(){
+			std::cout << "Dagger spawned. Will you buy? Y/N" << std::endl;
+		}
+
+		static void printShopGenerateWand(){
+			std::cout << "Wand spawned. Will you buy? Y/N" << std::endl;
+		}
+
+		static void printShopGenerateAttackPotion(){
+			std::cout << "Attack potion spawned. Will you buy? Y/N" << std::endl;
+		}
+
+		static void printShopGenerateHealthPotion(){
+			std::cout << "Health Potion spawned. Will you buy? Y/N" << std::endl;
+		}
+
+		static void printItemBuyFail(){
+			std::cout << "Not enough coins to buy." << std::endl;
+		}
+
+		static void printItemBuyPass(){
+			std::cout << "Item bought and added to inventory." << std::endl; 
+		}
 };
 
 #endif
