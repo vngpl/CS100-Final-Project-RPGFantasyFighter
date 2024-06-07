@@ -2,16 +2,25 @@
 #define INVENTORY_H
 
 #include <vector>
-#include "Item.h"
+#include <cassert>
+#include "Item.hpp"
 
-class Inventory {
+class Inventory
+{
 public:
-    void addItem(Item* item);
+    void addItem(Item *item);
+    void useItem(int idx);
 
-    Inventory() : items(2) {}
+    Item* getItem(int); 
+
+    bool IsEmpty();
+    bool OnlyWeapon();
+    bool OnlyPotion();
+
+    Inventory() : items(2, nullptr) {}
 
 private:
-    std::vector<Item*> items;
+    std::vector<Item *> items;
 };
 
-#endif // INVENTORY_H
+#endif
