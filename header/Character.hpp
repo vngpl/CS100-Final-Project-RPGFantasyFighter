@@ -1,38 +1,46 @@
-#ifndef __CHARACTER_HPP__
-#define __CHARACTER_HPP__
+#ifndef __PLAYER_HPP__
+#define __PLAYER_HPP__
 
 #include <string>
 #include "Inventory.hpp"
+// #include "Experience.hpp"
 
 class Character {
-    private:
+    public:
         enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
+
+    private:
+        int coins;
         Inventory inventory;
+        // Experience experience;
         CharacterType type;
-        std::string name;
         int health;
-        int maxHealth;
-        int level = 5;
-        double experience = 0.0;
+        int MAX_HEALTH;
+        int monstersSlain;
+        int level;
+        double experience;
         double attackStrength;
 
     public:
-        Character(CharacterType,  const std::string&, int, double);
+        Character(CharacterType, int, double);
 
-        CharacterType& getType() const;
-        const std::string& getName() const;
+        const std::string getType() const;
         int getHealth() const;
         int getLevel() const;
+        int getMonstersSlain() const;
+        int getCoins() const;
         double getExperience() const;
         double getAttackStrength() const;
 
+        void setCoins(int);
         void setHealth(int);
         void setExperience(double);
+        void updateMonsterSlainCount();
+        void setAttackStrength(double);
 
-        void useItem(Item*);
+        // void useItem(Item*);
 
         bool isDead() const;
-        // virtual void attack(Character&) = 0;
 };
 
 #endif
