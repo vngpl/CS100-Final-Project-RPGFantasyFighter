@@ -1,0 +1,2 @@
+#include "header/RPGFighter.hpp"
+

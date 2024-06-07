@@ -7,7 +7,7 @@ class Wizard : public Character {
     private:
 
     public:
-        Wizard(const std::string&, int, double, double);
+        Wizard(const std::string&, int, double);
         void attack(Character&) override;
         // IMPLEMENT ATTACK FUNCTIONS
 };
