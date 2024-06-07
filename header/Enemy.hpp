@@ -21,7 +21,7 @@ class Enemy {
 
         void setHealth(int);
         // void setLevel();
-        void setAttackStrength();
+        void setAttackStrength(double);
 };
 
 #endif
