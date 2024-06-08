@@ -7,6 +7,7 @@ using namespace std;
 #include "../header/Enemy.hpp"
 #include "../header/Experience.hpp"
 
+
 Experience::Experience(int level, double expNext, double exp, Character* character, Enemy* enemy) {
     this->level = level;
     this->expNext = expNext;
