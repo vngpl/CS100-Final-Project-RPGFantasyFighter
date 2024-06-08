@@ -15,7 +15,6 @@ add_executable(final_proj
     src/Wizard.cpp
     src/Enemy.cpp
     src/Monster.cpp
-    src/Inventory.cpp
     src/Item.cpp
     header/Display.hpp
     )

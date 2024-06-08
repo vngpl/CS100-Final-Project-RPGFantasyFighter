@@ -4,51 +4,42 @@
 using namespace std;
 
 #include "../header/Character.hpp"
+#include "../header/Monster.hpp"
 #include "../header/Enemy.hpp"
-#include "../header/Difficulty.hpp"
+#include "../header/Diffi.hpp"
 
-pair<double, double> Difficulty::setEasy() {
-    Enemy enemy(MONSTER, 125, 100);
-    double modifiedHealth = enemy.getHealth() * 0.5;
-    double modifiedAttackStrength = enemy.getAttackStrength() * 0.5;
-    return {modifiedHealth, modifiedAttackStrength};
+void Difficulty::setEasy(Enemy &enemy) {
+    enemy.setHealth(enemy.getHealth() * 0.5);
+    enemy.setAttackStrength(enemy.getAttackStrength() * 0.5);
 }
 
-pair<double, double> Difficulty::setNormal() {
-    Enemy enemy(MONSTER, 125, 100);     
-    double modifiedHealth = enemy.getHealth();
-    double modifiedAttackStrength = enemy.getAttackStrength();
-    return {modifiedHealth, modifiedAttackStrength};
+void Difficulty::setNormal(Enemy &enemy) {    
+    // Stays the same lol
 }
 
-pair<double, double> Difficulty::setHard() {
-    Enemy enemy(MONSTER, 125, 100);
-    double modifiedHealth = enemy.getHealth() * 1.5;
-    double modifiedAttackStrength = enemy.getAttackStrength() * 1.5;
-    return {modifiedHealth, modifiedAttackStrength};
+void Difficulty::setHard(Enemy &enemy) {
+    enemy.setHealth(enemy.getHealth() * 1.5);
+    enemy.setAttackStrength(enemy.getAttackStrength() * 1.5);
 }
 
+pair<double, double> Difficulty::userDifficulty(int userInput, Enemy &enemy) {
+    switch (userInput) {
+        case 1:
+            setEasy(enemy);
+            break;
+        case 2:
+            setNormal(enemy);
+            break;
+        case 3:
+            setHard(enemy);
+            break;
+        default:
+            setEasy(enemy);
+            break;
+    }
+    return {enemy.getHealth(), enemy.getAttackStrength()};
+}
 
-// pair<double, double> Difficulty::userDifficulty(int userInput) {
-//     pair<double, double> stats; // To store the health and attack strength
-
-//     switch (userInput) {
-//         case 1:
-//             stats = monsterDiff.setEasy();
-//             userInput = 0;
-//             return stats;
-//             break;
-//         case 2:
-//             stats = monsterDiff.setNormal();
-//             userInput = 0;
-//             break;
-//         case 3:
-//             stats = monsterDiff.setHard();
-//             userInput = 0;
-//             break;
-//         default:
-//             stats = monsterDiff.setEasy();
-//             userInput = 0;
-//             break;
-//     }
-//  }
+// int main() 
+//     // Create an enemy with initial health and attack strength
+//     Enemy enemy(125, 100);

@@ -1,9 +1,10 @@
 #ifndef __PLAYER_HPP__
 #define __PLAYER_HPP__
 
+#include "Item.hpp"
+
 #include <string>
-#include "Inventory.hpp"
-// #include "Experience.hpp"
+#include <vector>
 
 class Character {
     private:
@@ -14,7 +15,8 @@ class Character {
         int monstersSlain;
         double experience;
         double attackStrength;
-        Inventory inventory;
+        std::vector<Item*> inventory;
+        // Coins coins;
         // Experience experience;
 
     public:
@@ -24,11 +26,13 @@ class Character {
         virtual std::string getType() const = 0;
 
         int getHealth() const;
+        int getMaxHealth() const;
         int getLevel() const;
         int getMonstersSlain() const;
         int getCoins() const;
         double getExperience() const;
         double getAttackStrength() const;
+        const std::vector<Item*>& getInventoryItems() const;
 
         void setCoins(int);
         void setHealth(int);
@@ -36,13 +40,13 @@ class Character {
         void updateMonsterSlainCount();
         void setAttackStrength(double);
 
-        bool inventoryIsEmpty();
-        bool inventoryOnlyWeapon();
-        bool inventoryOnlyPotion();
-        // void useItem(Item*);
-
+        bool inventoryIsEmpty() const;
+        bool hasWeapon() const;
+        bool hasPotion() const;
         bool isDead() const;
-        void useItem(int itemIndex);
+
+        void addItem(Item*);
+        void useItem(int);
 };
 
 #endif
