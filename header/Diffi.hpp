@@ -11,11 +11,14 @@ using namespace std;
 #include "../header/Enemy.hpp"
 
 class Difficulty {
+private:
+    Enemy* enemy;
+
 public:
-    static void setEasy(Enemy &enemy);
-    static void setNormal(Enemy &enemy);
-    static void setHard(Enemy &enemy);
-    pair<double, double> userDifficulty(int, Enemy&);
+    static void setEasy(Enemy*);
+    static void setNormal(Enemy*);
+    static void setHard(Enemy* );
+    pair<double, double> userDifficulty(int, Enemy*);
 };
 
 #endif
