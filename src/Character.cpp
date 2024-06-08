@@ -1,14 +1,16 @@
 #include "../header/Character.hpp"
 
 Character::Character(int health, double attackStrength)
-    : health(health), attackStrength(attackStrength), MAX_HEALTH(health), level(5), experience(0.0), monstersSlain(0), coins(0) { }
+    : health(health), attackStrength(attackStrength), MAX_HEALTH(health), level(5), experience(0.0), monstersSlain(0), coins(0), inventory(2, nullptr) { }
 
 int Character::getHealth() const { return health; }
+int Character::getMaxHealth() const { return MAX_HEALTH; }
 int Character::getLevel() const { return level; }
 int Character::getMonstersSlain() const { return monstersSlain; }
 int Character::getCoins() const { return coins; }
 double Character::getExperience() const { return experience; }
 double Character::getAttackStrength() const { return attackStrength; }
+const std::vector<Item*>& Character::getInventoryItems() const { return inventory; }
 
 void Character::setHealth(int newHealth) { health = newHealth; }
 void Character::updateMonsterSlainCount() { monstersSlain++; }
@@ -16,14 +18,22 @@ void Character::setCoins(int newCoins) { coins = newCoins; }
 void Character::setExperience(double newExperience) { experience = newExperience; }
 void Character::setAttackStrength(double newAttackStrength) { attackStrength = newAttackStrength; }
 
-bool Character::inventoryIsEmpty() { return inventory.IsEmpty(); }
-bool Character::inventoryOnlyPotion() { return inventory.OnlyPotion(); }
-bool Character::inventoryOnlyWeapon() { return inventory.OnlyWeapon(); }
-
+bool Character::inventoryIsEmpty() const { return (inventory.at(0) == nullptr && inventory.at(1) == nullptr); }
+bool Character::hasWeapon() const { return inventory.at(0) != nullptr; }
+bool Character::hasPotion() const { return inventory.at(1) != nullptr; }
 bool Character::isDead() const { return health <= 0; }
 
+void Character::addItem(Item* item) {
+    if (item->getType() == "SWORD" || item->getType() == "DAGGER" || item->getType() == "WAND") {
+        inventory.at(0) = item;
+    }
+    else  {
+        inventory.at(1) = item;
+    }
+}
+
 void Character::useItem(int itemIndex) {
-    Item* itemToUse = inventory.getItem(itemIndex);
+    Item* itemToUse = inventory.at(itemIndex);
 
     if (itemToUse == nullptr) {
         std::cerr << "Error: ITEM NOT FOUND IN INVENTORY AT INDEX " << itemIndex << std::endl;
@@ -48,7 +58,8 @@ void Character::useItem(int itemIndex) {
         setHealth(newAttributeValue);
     }
 
-    inventory.useItem(itemIndex);
+    delete inventory.at(itemIndex);
+    inventory.at(itemIndex) = nullptr;
 }
 
 

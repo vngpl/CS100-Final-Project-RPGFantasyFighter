@@ -4,8 +4,6 @@
 #include "Character.hpp"
 
 class Assassin : public Character {
-    private:
-
     public:
         Assassin();
         std::string getType() const override;

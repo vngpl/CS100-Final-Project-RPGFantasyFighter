@@ -4,9 +4,7 @@
 #include "Character.hpp"
 
 class Warrior : public Character {
-    private:
-
-    public:
+   public:
         Warrior();
         std::string getType() const override;
 };

@@ -6,7 +6,5 @@
 #include "Wizard.hpp"
 #include "Display.hpp"
 #include "Monster.hpp"
-#include "Inventory.hpp"
-#include "Shop.hpp"
 
 #endif
