@@ -33,41 +33,43 @@ class Display {
 			std::cout << "SELECT AN OPTION: ";
 		}
 
-		static void printQuit() {
-			std::cout << "Thank you for playing!" << std::endl
-					  << "You finished with: " << std::endl
-					  << "*DISPLAY STATS HERE*" << std::endl << std::endl;
+		static void printQuit(Character* character) {
+			std::cout << "Thank you for playing!" << std::endl << std::endl;
+			if (character != nullptr) {
+				std::cout << "As a(n) " << character->getType() << " you finished with:" << std::endl;
+				printCharacterInformation(character);
+			}
 		}
 
-		static void printCharacterInformation(Character *character) {
-			std::cout << "TYPE: " << character->getType() << std::endl;
-			std::cout << "HEALTH: " << character->getHealth() << std::endl;
-			std::cout << "LEVEL: " << character->getLevel() << std::endl;
-			std::cout << "EXPERIENCE: " << character->getExperience() << std::endl;
-			std::cout << "ATTACK STRENGTH: " << character->getAttackStrength() << std::endl;
+		static void printCharacterInformation(Character* character) {
+			std::cout << "HEALTH: " << character->getHealth() << std::endl
+			 		  << "LEVEL: " << character->getLevel() << std::endl
+			 		  << "EXPERIENCE: " << character->getExperience() << std::endl
+			 		  << "ATTACK STRENGTH: " << character->getAttackStrength() << std::endl
+					  << "MONSTERS SLAIN: " << character->getMonstersSlain() << std::endl << std::endl;
 		}
 
-		static void printType(Character *character) {
+		static void printType(Character* character) {
 			std::cout << "TYPE: " << character->getType() << std::endl << std::endl;
 		}
 
-		static void printHealth(Character *character) {
+		static void printHealth(Character* character) {
 			std::cout << "HEALTH: " << character->getHealth() << std::endl << std::endl;
 		}
 
-		static void printLevel(Character *character) {
+		static void printLevel(Character* character) {
 			std::cout << "LEVEL: " << character->getLevel() << std::endl << std::endl;
 		}
 
-		static void printExperience(Character *character) {
+		static void printExperience(Character* character) {
 			std::cout << "EXPERIENCE: " << character->getExperience() << std::endl << std::endl;
 		}
 
-		static void printAttackStrength(Character *character) {
+		static void printAttackStrength(Character* character) {
 			std::cout << "ATTACK STRENGTH: " << character->getAttackStrength() << std::endl << std::endl;
 		}
 
-		static void printDeath(Character *character) {
+		static void printDeath(Character* character) {
 			std::cout << "YOU HAVE DIED." << std::endl << std::endl;
 		}
 
@@ -84,10 +86,10 @@ class Display {
 		}
 
 		static void printBattleOptions() {
-			std::cout << "CHOOSE FIGHT OPTION:" << std::endl
-					  << "1. Fight" << std::endl
-					  << "2. Use Items" << std::endl
-					  << "3. Run" << std::endl
+			std::cout << "CHOOSE FIGHT OPTION:" << std::endl << std::endl
+					  << "1. CHALLENGE AN OPPONENT" << std::endl
+					  << "2. USE ITEM" << std::endl
+					  << "3. RUN" << std::endl
 					  << std::endl;
 			std::cout << "SELECT AN OPTION: ";
   		}
@@ -95,39 +97,27 @@ class Display {
 		static void printInventoryItems(Character* character) {
 			const std::vector<Item*>& items = character->getInventoryItems();
 			if (character->inventoryIsEmpty()) {
-				std::cout << "Inventory is empty." << std::endl;
+				std::cout << "INVENTORY IS EMPTY" << std::endl;
 			}
 			else {
 				for (auto item : items) {
 					if (item->getType() == "SWORD") {
-						std::cout << "You have a sword." << std::endl;
+						std::cout << "YOU HAVE A SWORD." << std::endl;
 					}
 					else if (item->getType() == "DAGGER") {
-						std::cout << "You have a dagger." << std::endl;
+						std::cout << "YOU HAVE A DAGGER." << std::endl;
 					}
 					else if (item->getType() == "WAND") {
-						std::cout << "You have a wand." << std::endl;
+						std::cout << "YOU HAVE A WAND." << std::endl;
 					}
 					else if (item->getType() == "HEALTH_POTION") {
-						std::cout << "You have a health potion." << std::endl;
+						std::cout << "YOU HAVE A HEALTH POTION." << std::endl;
 					}
 					else {
-						std::cout << "You have an attack potion." << std::endl;
+						std::cout << "YOU HAVE AN ATTACK POTION." << std::endl;
 					}
 				}
 			}
-			// 	// bool hasWeapon = character->hasWeapon();
-			// 	// bool hasPotion = character->hasPotion();
-			// 	// if (hasWeapon && hasPotion) {
-        	// 	// 	std::cout << "You have a weapon and a potion." << std::endl;
-			// 	// }
-			// 	// else if (hasPotion) {
-			// 	// 	std::cout << "You have a potion." << std::endl;
-			// 	// }
-			// 	// else if (hasWeapon && hasPotion) {
-			// 	// 	std::cout << "You have a weapon and a potion." << std::endl;
-			// 	// }
-			// }
 		}
 
 		static void printUseSword(){

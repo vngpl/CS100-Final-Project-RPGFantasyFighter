@@ -6,7 +6,6 @@
 class Wizard : public Character {
    public:
         Wizard();
-        std::string getType() const override;
 };
 
 #endif

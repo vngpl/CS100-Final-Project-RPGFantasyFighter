@@ -1,7 +1,15 @@
 #include "../header/Character.hpp"
 
-Character::Character(int health, double attackStrength)
-    : health(health), attackStrength(attackStrength), MAX_HEALTH(health), level(5), experience(0.0), monstersSlain(0), coins(0), inventory(2, nullptr) { }
+Character::Character(int health, double attackStrength, const std::string& type)
+    : health(health), attackStrength(attackStrength), type(type), MAX_HEALTH(health), level(5), experience(0.0), monstersSlain(0), coins(0), inventory(2, nullptr) { }
+
+Character::~Character() {
+    for (Item*& item : inventory) {
+        delete item;
+        item = nullptr;
+    }
+    inventory.clear();
+}
 
 int Character::getHealth() const { return health; }
 int Character::getMaxHealth() const { return MAX_HEALTH; }
@@ -10,6 +18,7 @@ int Character::getMonstersSlain() const { return monstersSlain; }
 int Character::getCoins() const { return coins; }
 double Character::getExperience() const { return experience; }
 double Character::getAttackStrength() const { return attackStrength; }
+const std::string& Character::getType() const { return type; }
 const std::vector<Item*>& Character::getInventoryItems() const { return inventory; }
 
 void Character::setHealth(int newHealth) { health = newHealth; }

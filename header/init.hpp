@@ -6,5 +6,9 @@
 #include "Wizard.hpp"
 #include "Display.hpp"
 #include "Monster.hpp"
+#include "EXP.hpp"
+#include "Diffi.hpp"
+#include "Battle.hpp"
+#include "Coins.hpp"
 
 #endif
