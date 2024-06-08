@@ -130,6 +130,21 @@ class Display {
 			// }
 		}
 
+		static void printItemOptions(Character* character){
+			if (character->IsEmpty()) {
+				std::cout << "No item can be used." << std::endl;
+			}
+			else if (character->hasWeapon()) {
+        		std::cout << "Equip the weapon? Y/N" << std::endl;
+    		}	
+			else if (character->hasPotion()) {
+				std::cout << "Apply the potion? Y/N" << std::endl;
+			}
+			else {
+				std::cout << "Use weapon or potion? N/W/P" << std::endl;
+			}
+		}	
+
 
 
 		static void printUseSword(){
