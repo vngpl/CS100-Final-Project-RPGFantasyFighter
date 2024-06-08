@@ -40,7 +40,6 @@ class Experience {
         int getMonsterHealth();
         void setHPMAX(int);
 
-    
 
 };
 
