@@ -5,25 +5,24 @@
 #include "Inventory.hpp"
 // #include "Experience.hpp"
 
-enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
-
 class Character {
     private:
-        int coins;
-        Inventory inventory;
-        // Experience experience;
-        CharacterType type;
-        int health;
         int MAX_HEALTH;
-        int monstersSlain;
+        int health;
         int level;
+        int coins;
+        int monstersSlain;
         double experience;
         double attackStrength;
+        Inventory inventory;
+        // Experience experience;
 
     public:
-        Character(CharacterType, int, double);
+        Character(int, double);
+        virtual ~Character() = default;
 
-        const std::string getType() const;
+        virtual std::string getType() const = 0;
+
         int getHealth() const;
         int getLevel() const;
         int getMonstersSlain() const;
@@ -43,7 +42,7 @@ class Character {
         // void useItem(Item*);
 
         bool isDead() const;
-        void useItem(int);
+        void useItem(int itemIndex);
 };
 
 #endif

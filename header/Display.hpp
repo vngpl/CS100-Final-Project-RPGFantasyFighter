@@ -92,6 +92,15 @@ class Display
 					<< std::endl;
 		}
 
+		static void printBattleOptions() {
+    std::cout << "CHOOSE FIGHT OPTION:" << std::endl
+              << "1. Fight" << std::endl
+              << "2. Use Items" << std::endl
+              << "3. Run" << std::endl
+              << std::endl;
+    std::cout << "SELECT AN OPTION: ";
+  }
+
 		static void printItemOptions(Character* character){
 			if (character->inventoryIsEmpty()) {
 				std::cout << "Inventory is empty." << std::endl;

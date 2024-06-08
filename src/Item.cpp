@@ -1,42 +1,23 @@
 #include "../header/Item.hpp"
-#include <iostream>
 
+Item::Item(int strength, int cost) : strength(strength), cost(cost) { }
 
-Item::Item(const std::string& name) : name(name) {}
-Item::~Item() {}
+int Item::getStrength() const { return strength; }
+int Item::getCost() const { return cost; }
+void Item::setStrength(int newStrength) { strength = newStrength; }
+void Item::setCost(int newCost) { cost = newCost; }
 
-std::string Item::getName() const {
-    return name;
-}
+Sword::Sword() : Item(30, 1) { }
+std::string Sword::getType() const { return "SWORD"; }
 
+Dagger::Dagger() : Item(35, 2) { }
+std::string Dagger::getType() const { return "DAGGER"; }
 
-Weapon::Weapon(Type type, int damage, int coinCost) 
-    : Item("Weapon"), type(type), damage(damage), coinCost(coinCost) {}
+Wand::Wand() : Item(50, 3) { }
+std::string Wand::getType() const { return "WAND"; }
 
-Weapon::Type Weapon::getType() const {
-    return type;
-}
+HealthPotion::HealthPotion() : Item(50, 1) { }
+std::string HealthPotion::getType() const { return "HEALTH__POTION"; }
 
-int Weapon::getDamage() const {
-    return damage;
-}
-
-int Weapon::getCoinCost() const {
-    return coinCost;
-}
-
-
-Potion::Potion(Type type, int strength, int coinCost) 
-    : Item("Potion"), type(type), strength(strength), coinCost(coinCost) {}
-
-Potion::Type Potion::getType() const {
-    return type;
-}
-
-int Potion::getStrength() const {
-    return strength;
-}
-
-int Potion::getCoinCost() const {
-    return coinCost;
-}
+AttackPotion::AttackPotion() : Item(10, 2) { }
+std::string AttackPotion::getType() const { return "ATTACK_POTION"; }
