@@ -26,6 +26,8 @@ void Coins::addCoinsOnMONSERdeath() {
 
 int Coins::getAmountCoins() const { return amountCoins; }
 
+int Coins::setUpdateCoins(int newCoins) { newCoins = amountCoins; }
+
 
 // int coinsDropped = minCoins + std::rand() % (maxCoins - minCoins + 1);
 // amountCoins += coinsDropped;
