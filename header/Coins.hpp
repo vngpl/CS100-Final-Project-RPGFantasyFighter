@@ -4,7 +4,8 @@
 #ifndef __COINS_HPP__
 #define __COINS_HPP__
 
-#include "Character.hpp"
+#include "../header/Character.hpp"
+#include "../header/Enemy.hpp"
 
 using namespace std;
 
@@ -13,13 +14,18 @@ class Coins {
         int amountCoins;
         int minCoins;
         int maxCoins;
+        Character* character;
+        Enemy* enemy;
     public:
         // CONSTRUCTOR TO INITIALIZE THE COIN AMOUNT TO 0
+        // Coins () {}
         Coins(int minCoins = 1, int maxCoins = 10); //Character* character
 
         // WHEN MONSTER DIES RANDOM 3-10 COINS WILL BE ADDED
         void addCoinsOnMONSERdeath();
         int getAmountCoins() const;
+        int setUpdateCoins(int);
+
 };
 
 #endif // COINS_HPP

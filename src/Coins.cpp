@@ -13,15 +13,20 @@ Coins::Coins(int minCoins, int maxCoins) //Character* character
 }
 
 void Coins::addCoinsOnMONSERdeath() {
-    // if (monsterHP <= 0) {
+    int monsterHP = enemy->getHealth();
+    
+    if (monsterHP <= 0) {
         int coinsDropped = minCoins + std::rand() % (maxCoins - minCoins + 1);
         amountCoins += coinsDropped;
-    // }
+        character->setCoins(amountCoins);
+    }
 }
 
 // int Coins::getCoins() const {return }
 
 int Coins::getAmountCoins() const { return amountCoins; }
+
+int Coins::setUpdateCoins(int newCoins) { newCoins = amountCoins; }
 
 
 // int coinsDropped = minCoins + std::rand() % (maxCoins - minCoins + 1);
