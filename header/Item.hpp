@@ -4,52 +4,62 @@
 #include <string>
 #include <iostream>
 
-class Item{
-public:
-    Item(const std::string& name);
-    std::string getName() const;
-    virtual ~Item();
+class Item {
+    private:
+        int strength;
+        int cost;
 
-private:
-    std::string name;
-    int itemCount;
+    public:
+        Item(int, int);
+        virtual ~Item();
+        int getStrength() const;
+        int getCost() const;
+        void setStrength(int);
+        void setCost(int);
+        virtual std::string getType() const = 0;
+        
 };
 
-class Weapon : public Item{
-public:
-    enum class Type{
-        Sword,
-        Dagger,
-        Wand
-    };
-
-    Weapon(Type type, int damage, int coinCost);
-    Type getType() const;
-    int getDamage() const;
-    int getCoinCost() const;
-
-private:
-    Type type;
-    int damage;
-    int coinCost;
+class Sword : public Item {
+    private:
+        
+    public:
+        Sword();
+        std::string getType() const override;
 };
 
-class Potion : public Item{
-public:
-    enum class Type{
-        AttackBoost,
-        HealthRecovery
-    };
-
-    Potion(Type type, int strength, int coinCost);
-    Type getType() const;
-    int getStrength() const;
-    int getCoinCost() const; 
-
-private:
-    Type type;
-    int strength;
-    int coinCost; 
+class Dagger : public Item {
+    private:
+        
+    public:
+        Dagger();
+        std::string getType() const override;
 };
+
+class Wand : public Item {
+    private:
+        
+    public:
+        Wand();
+        std::string getType() const override;
+};
+
+class HealthPotion : public Item {
+    private:    
+
+    public:
+        HealthPotion();
+        std::string getType() const override;
+};
+
+class AttackPotion : public Item {
+    private:    
+
+    public:
+        AttackPotion();
+        std::string getType() const override;
+};
+
+
 
 #endif

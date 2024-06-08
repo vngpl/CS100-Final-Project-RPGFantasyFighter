@@ -3,24 +3,24 @@
 
 #include "Character.hpp"
 
-enum EnemyType {MONSTER};
-
 class Enemy {
     private:
-        EnemyType type;
         int health;
         int level;
         double attackStrength;
 
     public:
-        Enemy(EnemyType, int, double);
-        const std::string& getEnemyType() const;
+        Enemy(int, double);
+        virtual ~Enemy();
+
+        virtual std::string& getType() const = 0;
+
         int getHealth() const;
         int getLevel() const;
         double getAttackStrength() const;
 
         void setHealth(int);
-        // void setLevel();
+        void setLevel(int);
         void setAttackStrength(double);
 };
 

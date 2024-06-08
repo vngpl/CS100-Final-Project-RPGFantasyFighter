@@ -1,32 +1,37 @@
 #include "../header/Inventory.hpp"
 
+Inventory::Inventory() {
+    inventoryItems[0] = nullptr;
+    inventoryItems[1] = nullptr;
+}
+
 void Inventory::addItem(Item* item) {
-    if (dynamic_cast<Weapon*>(item)) {
-        items.at(0) = item;
+    if (item->getType() == "SWORD" || item->getType() == "DAGGER" || item->getType() == "WAND") {
+        inventoryItems[0] = item;
     }
-    if (dynamic_cast<Potion*>(item)) {
-        items.at(1) = item;
+    else  {
+        inventoryItems[1] = item;
     }
 }
 
 void Inventory::useItem(int idx){
-    delete items.at(idx);
-    items.at(idx) = nullptr;
+    delete inventoryItems[idx];
+    inventoryItems[idx] = nullptr;
 }
 
 Item* Inventory::getItem(int idx){
-    return items.at(idx);
+    return inventoryItems[idx];
 }
 
-bool Inventory::IsEmpty() {
-    return (items.at(0) == nullptr && items.at(1) == nullptr);
+bool Inventory::IsEmpty() const {
+    return (inventoryItems[0] == nullptr && inventoryItems[1] == nullptr);
 }
 
-bool Inventory::OnlyWeapon() {
-    return (items.at(0) != nullptr && items.at(1) == nullptr);
+bool Inventory::OnlyWeapon() const {
+    return (inventoryItems[0] != nullptr && inventoryItems[1] == nullptr);
 }
 
 
-bool Inventory::OnlyPotion() {
-    return (items.at(0) == nullptr && items.at(1) != nullptr);
+bool Inventory::OnlyPotion() const {
+    return (inventoryItems[0] == nullptr && inventoryItems[1] != nullptr);
 }

@@ -5,22 +5,22 @@
 #include <cassert>
 #include "Item.hpp"
 
-class Inventory
-{
-public:
-    void addItem(Item *item);
-    void useItem(int idx);
+class Inventory {
+    private:
+        Item* inventoryItems[2];
 
-    Item* getItem(int); 
+    public:
+        Inventory();
+        
+        void addItem(Item *item);
+        void useItem(int idx);
 
-    bool IsEmpty();
-    bool OnlyWeapon();
-    bool OnlyPotion();
+        Item* getItem(int); 
 
-    Inventory() : items(2, nullptr) {}
+        bool IsEmpty() const;
+        bool OnlyWeapon() const;
+        bool OnlyPotion() const;
 
-private:
-    std::vector<Item *> items;
 };
 
 #endif
