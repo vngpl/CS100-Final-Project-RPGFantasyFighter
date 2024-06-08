@@ -130,6 +130,8 @@ class Display {
 			// }
 		}
 
+
+
 		static void printUseSword(){
 			std::cout << "Sword equiped! Attack boosted." << std::endl;
 		}
@@ -150,25 +152,29 @@ class Display {
 			std::cout << "Health potion applied. Health recovered." << std::endl;
 		}
 
+
+
 		static void printShopGenerateSword(){
-			std::cout << "Sword spawned. Will you buy? Y/N" << std::endl;
+			std::cout << "The shop spawned a Sword, with cost 1. Will you buy? Y/N" << std::endl;
 		}
 
 		static void printShopGenerateDagger(){
-			std::cout << "Dagger spawned. Will you buy? Y/N" << std::endl;
+			std::cout << "The shop spawned a Dagger, with cost 2. Will you buy? Y/N" << std::endl;
 		}
 
 		static void printShopGenerateWand(){
-			std::cout << "Wand spawned. Will you buy? Y/N" << std::endl;
+			std::cout << "The shop spawned a Wand, with cost 3. Will you buy? Y/N" << std::endl;
 		}
 
 		static void printShopGenerateAttackPotion(){
-			std::cout << "Attack potion spawned. Will you buy? Y/N" << std::endl;
+			std::cout << "The shop spawned an Attack Potion, with cost 2. Will you buy? Y/N" << std::endl;
 		}
 
 		static void printShopGenerateHealthPotion(){
-			std::cout << "Health Potion spawned. Will you buy? Y/N" << std::endl;
+			std::cout << "The shop spawned a Health Potion, with cost 1. Will you buy? Y/N" << std::endl;
 		}
+
+
 
 		static void printItemBuyFail(){
 			std::cout << "Not enough coins to buy." << std::endl;
