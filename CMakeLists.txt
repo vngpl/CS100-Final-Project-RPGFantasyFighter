@@ -9,4 +9,12 @@ include_directories(header)
 
 add_executable(final_proj
     src/main.cpp
-    src/Character.cpp)
+    src/Character.cpp
+    src/Assassin.cpp
+    src/Warrior.cpp
+    src/Wizard.cpp
+    src/Enemy.cpp
+    src/Monster.cpp
+    src/Item.cpp
+    header/Display.hpp
+    )

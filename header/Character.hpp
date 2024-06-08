@@ -1,35 +1,38 @@
 #ifndef __PLAYER_HPP__
 #define __PLAYER_HPP__
 
-#include <string>
-#include "Inventory.hpp"
-// #include "Experience.hpp"
+#include "Item.hpp"
 
-enum CharacterType {ASSASSIN, WARRIOR, WIZARD};
+#include <string>
+#include <vector>
 
 class Character {
     private:
-        int coins;
-        Inventory inventory;
-        // Experience experience;
-        CharacterType type;
-        int health;
         int MAX_HEALTH;
-        int monstersSlain;
+        int health;
         int level;
+        int coins;
+        int monstersSlain;
         double experience;
         double attackStrength;
+        std::vector<Item*> inventory;
+        // Coins coins;
+        // Experience experience;
 
     public:
-        Character(CharacterType, int, double);
+        Character(int, double);
+        virtual ~Character() = default;
 
-        const std::string getType() const;
+        virtual std::string getType() const = 0;
+
         int getHealth() const;
+        int getMaxHealth() const;
         int getLevel() const;
         int getMonstersSlain() const;
         int getCoins() const;
         double getExperience() const;
         double getAttackStrength() const;
+        const std::vector<Item*>& getInventoryItems() const;
 
         void setCoins(int);
         void setHealth(int);
@@ -37,12 +40,12 @@ class Character {
         void updateMonsterSlainCount();
         void setAttackStrength(double);
 
-        bool inventoryIsEmpty();
-        bool inventoryOnlyWeapon();
-        bool inventoryOnlyPotion();
-        // void useItem(Item*);
-
+        bool inventoryIsEmpty() const;
+        bool hasWeapon() const;
+        bool hasPotion() const;
         bool isDead() const;
+
+        void addItem(Item*);
         void useItem(int);
 };
 
