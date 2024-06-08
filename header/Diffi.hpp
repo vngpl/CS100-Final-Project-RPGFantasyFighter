@@ -8,12 +8,14 @@ using namespace std;
 #define __DIFFICULT_H__
 #include <utility> // for std::pair
 
+#include "../header/Enemy.hpp"
+
 class Difficulty {
 public:
-    pair<double, double> setEasy();
-    pair<double, double> setNormal();
-    pair<double, double> setHard();
-    void userDifficulty();
+    static void setEasy(Enemy &enemy);
+    static void setNormal(Enemy &enemy);
+    static void setHard(Enemy &enemy);
+    pair<double, double> userDifficulty(int, Enemy&);
 };
 
 #endif
