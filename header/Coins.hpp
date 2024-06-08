@@ -24,6 +24,7 @@ class Coins {
         // WHEN MONSTER DIES RANDOM 3-10 COINS WILL BE ADDED
         void addCoinsOnMONSERdeath();
         int getAmountCoins() const;
+        int setUpdateCoins(int); 
 
 };
 
