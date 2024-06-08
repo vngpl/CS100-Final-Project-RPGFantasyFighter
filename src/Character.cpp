@@ -22,50 +22,34 @@ bool Character::inventoryOnlyWeapon() { return inventory.OnlyWeapon(); }
 
 bool Character::isDead() const { return health <= 0; }
 
-// void Character::useItem(int itemIndex) {
-//     Item* testItem = new Item();
-//     int newValue = 0;
+void Character::useItem(int itemIndex) {
+    Item* itemToUse = inventory.getItem(itemIndex);
 
-//     testItem = inventory.getItem(itemIndex);
+    if (itemToUse == nullptr) {
+        std::cerr << "Error: ITEM NOT FOUND IN INVENTORY AT INDEX " << itemIndex << std::endl;
+        return;
+    }
 
-//     if (static_cast<Weapon>(item)->getType() == Weapon::Type::Sword){
-//         if (getType() == WARRIOR){
-//             newValue = getAttackStrength() + static_cast<Weapon>(item)->getDamage() + 15;
-//         }
-//         else {
-//             newValue = getAttackStrength() + static_cast<Weapon>(item)->getDamage();
-//         }
-//         setAttackStrength(newValue);
-//     }
-//     else if (static_cast<Weapon>(item)->getType() == Weapon::Type::Dagger){
-//         if (getType() == ASSASSIN){
-//             newValue = getAttackStrength() + static_cast<Weapon>(item)->getDamage() + 15;
-//         }
-//         else {
-//             newValue = getAttackStrength() + static_cast<Weapon>(item)->getDamage();
-//         }
-//         setAttackStrength(newValue);
-//     }
-//     else if (static_cast<Weapon>(item)->getType() == Weapon::Type::Wand){
-//         if (getType() == WIZARD){
-//             newValue = getAttackStrength() + static_cast<Weapon>(item)->getDamage() + 15;
-//         }
-//         else {
-//             newValue = getAttackStrength() + static_cast<Weapon>(item)->getDamage();
-//         }
-//         setAttackStrength(newValue);
-//     }
-//     else if (static_cast<Potion>(item)->getType() == Potion::Type::AttackBoost){
-//         newValue = getAttackStrength() + static_cast<Potion>(item)->getStrength();
-//         setAttackStrength(newValue);
-//     }
-//     else if (static_cast<Potion>(item)->getType() == Potion::Type::HealthRecovery){
-//         newValue = getHealth() + static_cast<Potion>(item)->getStrength();
-//         setHealth(newValue);
-//     }
+    int newAttributeValue = 0;
 
-//     inventory.useItem(itemIndex);
-// }
+    if ((itemToUse->getType() == "SWORD" && getType() == "WARRIOR") ||
+        (itemToUse->getType() == "DAGGER" && getType() == "ASSASSIN") ||
+        (itemToUse->getType() == "WAND" && getType() == "WIZARD")) {
+        newAttributeValue = getAttackStrength() + static_cast<double>(itemToUse->getStrength()) + 15;
+    }
+    else {
+        newAttributeValue = getAttackStrength() + static_cast<double>(itemToUse->getStrength());
+    }
+
+    if (itemIndex == 0) {
+        setAttackStrength(newAttributeValue);
+    }
+    else {
+        setHealth(newAttributeValue);
+    }
+
+    inventory.useItem(itemIndex);
+}
 
 
 

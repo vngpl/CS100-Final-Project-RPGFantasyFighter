@@ -11,18 +11,18 @@ class Item {
 
     public:
         Item(int, int);
-        virtual ~Item();
+        virtual ~Item() = default;
         int getStrength() const;
         int getCost() const;
         void setStrength(int);
         void setCost(int);
         virtual std::string getType() const = 0;
-        
+
 };
 
 class Sword : public Item {
     private:
-        
+
     public:
         Sword();
         std::string getType() const override;
@@ -30,7 +30,7 @@ class Sword : public Item {
 
 class Dagger : public Item {
     private:
-        
+
     public:
         Dagger();
         std::string getType() const override;
@@ -38,14 +38,14 @@ class Dagger : public Item {
 
 class Wand : public Item {
     private:
-        
+
     public:
         Wand();
         std::string getType() const override;
 };
 
 class HealthPotion : public Item {
-    private:    
+    private:
 
     public:
         HealthPotion();
@@ -53,13 +53,11 @@ class HealthPotion : public Item {
 };
 
 class AttackPotion : public Item {
-    private:    
+    private:
 
     public:
         AttackPotion();
         std::string getType() const override;
 };
-
-
 
 #endif

@@ -19,7 +19,7 @@ class Character {
 
     public:
         Character(int, double);
-        virtual ~Character();
+        virtual ~Character() = default;
 
         virtual std::string getType() const = 0;
 

@@ -7,18 +7,18 @@ using namespace std;
 #ifndef __EXP_H__
 #define __EXP_H__
 
-#include "../header/Character.hpp"
-#include "../header/Enemy.hpp"
-#include "../header/EXP.hpp"
+#include "Character.hpp"
+#include "Enemy.hpp"
+#include "EXP.hpp"
 
-class Experience { 
+class Experience {
     private:
         int level = 5;
         double exp; //GIVEN FROM CHARACTER FILE
         int healthXP;
         int strengthXP;
         double expNext;
-        int levelMonster; 
+        int levelMonster;
         int healthMonster;
         int skillPoints = 0;
         Character* character;

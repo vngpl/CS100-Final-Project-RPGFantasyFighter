@@ -1,7 +1,6 @@
 #include "../header/Enemy.hpp"
 
-Enemy::Enemy(int health, double attackStrength)
-    : health(health), attackStrength(attackStrength), level(5) { }
+Enemy::Enemy(int health, double attackStrength) : health(health), attackStrength(attackStrength), level(5) { }
 
 int Enemy::getHealth() const { return health; }
 int Enemy::getLevel() const { return level; }

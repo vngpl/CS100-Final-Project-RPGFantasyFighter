@@ -4,7 +4,7 @@
 #ifndef __COINS_HPP__
 #define __COINS_HPP__
 
-#include "../header/Character.hpp"
+#include "Character.hpp"
 
 using namespace std;
 

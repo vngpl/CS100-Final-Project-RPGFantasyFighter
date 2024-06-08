@@ -11,9 +11,9 @@ class Enemy {
 
     public:
         Enemy(int, double);
-        virtual ~Enemy();
+        virtual ~Enemy() = default;
 
-        virtual std::string& getType() const = 0;
+        virtual std::string getType() const = 0;
 
         int getHealth() const;
         int getLevel() const;

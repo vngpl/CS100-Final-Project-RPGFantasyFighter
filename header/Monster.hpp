@@ -1,7 +1,7 @@
 #ifndef __MONSTER_HPP__
 #define __MONSTER_HPP__
 
-#include "../header/Enemy.hpp"
+#include "Enemy.hpp"
 
 class Monster : public Enemy {
     private:
