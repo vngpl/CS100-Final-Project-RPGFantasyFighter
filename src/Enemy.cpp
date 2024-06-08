@@ -8,5 +8,5 @@ int Enemy::getLevel() const { return level; }
 double Enemy::getAttackStrength() const { return attackStrength; }
 
 void Enemy::setHealth(int newHealth) { health = newHealth; }
-void Enemy::setLevel(int newLevel) { level = newLevel; }
+// void Enemy::setLevel(int newLevel) { level = newLevel; }
 void Enemy::setAttackStrength(double newAttackStrength) { attackStrength = newAttackStrength; }
