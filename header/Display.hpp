@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Character.hpp"
+#include "Enemy.hpp"
 
 class Display {
 	public:
@@ -22,6 +23,7 @@ class Display {
 					  << "1. Assassin (+20 ATK, -10 HP)" << std::endl
 					  << "2. Warrior (+0 ATK, +25 HP)" << std::endl
 					  << "3. Wizard (+0 ATK, +0 HP)" << std::endl << std::endl;
+			std::cout << "Base stats: 100 ATK, 100 HP" << std::endl << std::endl;
 			std::cout << "SELECT AN OPTION: ";
 		}
 
@@ -47,6 +49,19 @@ class Display {
 			std::cout << "ATTACK STRENGTH: " << character->getAttackStrength() << std::endl;
 		}
 
+
+
+		//DISPLAY MONSTER STATS
+		static void printMONSTERInformation(Enemy *enemy) {
+			std::cout << "MONSTER TYPE: " << enemy->getType() << std::endl;
+			std::cout << "MONSTER HEALTH: " << enemy->getHealth() << std::endl;
+			std::cout << "MONSTER LEVEL: " <<  enemy->getLevel() << std::endl;
+			std::cout << "MONSTER ATTACK STRENGTH: " << enemy->getAttackStrength() << std::endl;
+		}
+
+
+
+
 		static void printType(Character *character) {
 			std::cout << "TYPE: " << character->getType() << std::endl << std::endl;
 		}
@@ -66,6 +81,24 @@ class Display {
 		static void printAttackStrength(Character *character) {
 			std::cout << "ATTACK STRENGTH: " << character->getAttackStrength() << std::endl << std::endl;
 		}
+
+
+
+		//DISPLAY EACH MONSTER STAT 
+		static void printAttackStrengthMONSTER(Enemy *enemy) {
+			std::cout << "MONSTER ATTACK STRENGTH: " << enemy->getAttackStrength() << std::endl << std::endl;
+		}
+
+		static void printHealthMONSTER(Enemy *enemy) {
+			std::cout << "MONSTER HEALTH: " << enemy->getHealth() << std::endl << std::endl;
+		}
+
+		static void printLevelMONSTER(Enemy *enemy) {
+			std::cout << "MONSTER LEVEL: " << enemy->getLevel() << std::endl << std::endl;
+		}
+
+
+
 
 		static void printDeath(Character *character) {
 			std::cout << "YOU HAVE DIED." << std::endl << std::endl;

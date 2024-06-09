@@ -6,5 +6,6 @@
 #include "Wizard.hpp"
 #include "Display.hpp"
 #include "Monster.hpp"
+#include "Diffi.hpp"
 
 #endif
