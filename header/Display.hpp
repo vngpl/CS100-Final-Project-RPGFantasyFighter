@@ -60,6 +60,7 @@ class Display {
 			std::cout << "MONSTER ATTACK STRENGTH: " << enemy->getAttackStrength() << std::endl;
 		}
 
+		static void printType(Character *character) {
 			std::cout << "TYPE: " << character->getType() << std::endl << std::endl;
 		}
 
