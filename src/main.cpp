@@ -6,10 +6,8 @@ const std::string requestInput(/*const std::string&*/);
 
 int main() {
 	Character* player = nullptr;
+	Enemy* enemy = nullptr;
 
-	Display::printNewline();
-	Display::printNewline();
-	Display::printNewline();
 	Display::printIntro();
 
 	// WELCOME TO FANTASY FIGHTER I
@@ -71,7 +69,6 @@ int main() {
 	
 	Display::printNewline();
 
-
 	// while (!player->isDead()) {
 		option = requestInput();
 		Display::printBattleOptions();
@@ -92,6 +89,16 @@ int main() {
 	// }
 
 	// Display::printCharacterInformation(player);
+
+
+	Display::printNewline();
+
+	//SHOW STATS THAT CHANGE MONSTER CLASS
+	Display::printAttackStrengthMONSTER(enemy);
+	Display::printHealthMONSTER(enemy);
+	Display::printLevelMONSTER(enemy);
+
+	Display::printInventoryItems(player);
 
 	delete player;
 	player = nullptr;
