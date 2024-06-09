@@ -12,13 +12,16 @@ using namespace std;
 
 class Difficulty {
 private:
-    Enemy* enemy;
+
+    // Static vector to store pointers to enemy objects
+    static std::vector<Enemy*> allEnemies;
 
 public:
-    static void setEasy(Enemy*);
-    static void setNormal(Enemy*);
-    static void setHard(Enemy* );
-    pair<double, double> userDifficulty(int, Enemy*);
+
+    static void setEasy();
+    static void setNormal();
+    static void setHard();
+    static void addEnemy(Enemy*);
 };
 
 #endif
