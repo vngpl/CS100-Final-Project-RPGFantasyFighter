@@ -13,7 +13,7 @@ Experience::Experience(int level, double expNext, double exp, Character* charact
     this->expNext = expNext;
     this->exp = exp;
     this->levelMonster = enemy->getLevel();
-    this->healthXP = character->getMAXHealth();
+    this->healthXP = character->getMaxHealth();
     this->strengthXP = character->getAttackStrength();
     this->healthMonster = enemy->getHealth();
     this->character = character; 
@@ -76,7 +76,12 @@ void Experience::pointAssign(int input) {
         }
         else if (input == 2) {
             strengthXP = strengthADD;
+            if (character) {
+                character->setAttackStrength(strengthXP); // Update health using the Character object
+            }
+            //void Character::setAttackStrength(double newAttackStrength) { attackStrength = newAttackStrength; }
             this->skillPoints--; // Decrease skillPoints by 1
+
         }
         else if (input == 0) {
             spendingSkillPoints = false; // Exit loop if input is 0

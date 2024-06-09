@@ -6,7 +6,14 @@ const std::string& requestInput(const std::string&);
 
 int main() {
 	Character* player = nullptr;
+
+	Enemy* enemy = nullptr;
+	enemy = new Monster();
+	player = new Assassin();
+	// player->inventory->getItem(0);
+
 	std::string option;
+
 
 	Display::printIntro();
 
@@ -29,13 +36,13 @@ int main() {
 			Display::printSettings();
 			switch (std::stoi(requestInput())) {
 				case 1:
-					// EASY
+					Difficulty::setEasy(enemy);
 					break;
 				case 2:
-					// MEDIUM
+					Difficulty::setNormal(enemy);
 					break;
 				case 3:
-					// HARD
+					Difficulty::setHard(enemy);
 					break;
 			}
 			break;
@@ -44,7 +51,21 @@ int main() {
 			break;
 	}
 
+	
+
 	Display::printNewline();
+
+	//SHOW STATS THAT CHANGE MONSTER CLASS
+	Display::printAttackStrengthMONSTER(enemy);
+	Display::printHealthMONSTER(enemy);
+	Display::printLevelMONSTER(enemy);
+
+
+	Display::printInventoryItems(player);
+
+
+	delete enemy;
+	enemy = nullptr;
 
 	delete player;
 	player = nullptr;

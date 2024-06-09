@@ -17,4 +17,5 @@ add_executable(final_proj
     src/Monster.cpp
     src/Item.cpp
     header/Display.hpp
+    src/Diffi.cpp
     )
