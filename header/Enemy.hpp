@@ -8,16 +8,16 @@ class Enemy {
         int health;
         int level;
         double attackStrength;
+        std::string type;
 
     public:
-        Enemy(int, double);
+        Enemy(int, double, const std::string&);
         virtual ~Enemy() = default;
-
-        virtual std::string getType() const = 0;
 
         int getHealth() const;
         int getLevel() const;
         double getAttackStrength() const;
+        const std::string& getType() const;
 
         void setHealth(int);
         void setLevel(int);

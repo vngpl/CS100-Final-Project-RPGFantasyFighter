@@ -11,7 +11,7 @@ class Item {
         std::string type;
 
     public:
-        Item(int, int);
+        Item(int, int, const std::string&);
         virtual ~Item() = default;
         int getStrength() const;
         int getCost() const;

@@ -6,7 +6,6 @@
 class Monster : public Enemy {
    public:
         Monster();
-        std::string getType() const override;
 };
 
 #endif
