@@ -15,15 +15,12 @@ class Character {
         int monstersSlain;
         double experience;
         double attackStrength;
+        std::string type;
         std::vector<Item*> inventory;
-        // Coins coins;
-        // Experience experience;
 
     public:
-        Character(int, double);
-        virtual ~Character() = default;
-
-        virtual std::string getType() const = 0;
+        Character(int, double, const std::string&);
+        virtual ~Character();
 
         int getHealth() const;
         int getMaxHealth() const;
@@ -32,6 +29,7 @@ class Character {
         int getCoins() const;
         double getExperience() const;
         double getAttackStrength() const;
+        virtual const std::string& getType() const;
         const std::vector<Item*>& getInventoryItems() const;
 
         void setCoins(int);

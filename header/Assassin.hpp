@@ -6,7 +6,6 @@
 class Assassin : public Character {
     public:
         Assassin();
-        std::string getType() const override;
 };
 
 #endif

@@ -1,33 +1,23 @@
 #include <iostream>
 #include "../header/init.hpp"
 
-bool invalidOption(const std::string& option) {
-	return (option != "1" && option != "2" && option != "3");
-}
-
-std::string requestInput() {
-	std::string option;
-	std::cin >> option;
-	while (invalidOption(option)) {
-		Display::printNewline();
-		Display::printInvalidInput();
-		Display::printSelectOption();
-		std::cin >> option;
-	}
-	Display::printNewline();
-	return option;
-}
+bool invalidOption(const std::string&);
+const std::string& requestInput(const std::string&);
 
 int main() {
 	Character* player = nullptr;
+
 	Enemy* enemy = nullptr;
 	enemy = new Monster();
 	player = new Assassin();
 	// player->inventory->getItem(0);
 
+	std::string option;
+
+
 	Display::printIntro();
 
-	switch (std::stoi(requestInput())) {
+	switch (std::stoi(requestInput(option))) {
 		case 1:
 			Display::printCharacterCreation();
 			switch (std::stoi(requestInput())) {
@@ -57,7 +47,7 @@ int main() {
 			}
 			break;
 		case 3:
-			Display::printQuit();
+			Display::printQuit(player);
 			break;
 	}
 
@@ -81,4 +71,20 @@ int main() {
 	player = nullptr;
 
 	return 0;
+}
+
+bool invalidOption(const std::string& option) {
+	return (option != "1" && option != "2" && option != "3");
+}
+
+const std::string& requestInput(const std::string& option) {
+	std::cin >> option;
+	while (invalidOption(option)) {
+		Display::printNewline();
+		Display::printInvalidInput();
+		Display::printSelectOption();
+		std::cin >> option;
+	}
+	Display::printNewline();
+	return option;
 }

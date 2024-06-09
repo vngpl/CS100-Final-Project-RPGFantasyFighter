@@ -8,6 +8,7 @@ class Item {
     private:
         int strength;
         int cost;
+        std::string type;
 
     public:
         Item(int, int);
@@ -16,7 +17,7 @@ class Item {
         int getCost() const;
         void setStrength(int);
         void setCost(int);
-        virtual std::string getType() const = 0;
+        virtual const std::string& getType() const;
         Item* generateRandomItem();
 
 };
@@ -24,31 +25,26 @@ class Item {
 class Sword : public Item {
     public:
         Sword();
-        std::string getType() const override;
 };
 
 class Dagger : public Item {
     public:
         Dagger();
-        std::string getType() const override;
 };
 
 class Wand : public Item {
     public:
         Wand();
-        std::string getType() const override;
 };
 
 class HealthPotion : public Item {
     public:
         HealthPotion();
-        std::string getType() const override;
 };
 
 class AttackPotion : public Item {
     public:
         AttackPotion();
-        std::string getType() const override;
 };
 
 #endif

@@ -2,12 +2,13 @@
 #include <ctime>
 #include "../header/Item.hpp"
 
-Item::Item(int strength, int cost) : strength(strength), cost(cost) { }
+Item::Item(int strength, int cost, const std::string& type) : strength(strength), cost(cost), type(type) { }
 
 int Item::getStrength() const { return strength; }
 int Item::getCost() const { return cost; }
 void Item::setStrength(int newStrength) { strength = newStrength; }
 void Item::setCost(int newCost) { cost = newCost; }
+const std::string& Item::getType() { return type; }
 
 Item* Item::generateRandomItem() {
     srand(time(0));
@@ -23,17 +24,8 @@ Item* Item::generateRandomItem() {
     }
 }
 
-Sword::Sword() : Item(30, 1) { }
-std::string Sword::getType() const { return "SWORD"; }
-
-Dagger::Dagger() : Item(35, 2) { }
-std::string Dagger::getType() const { return "DAGGER"; }
-
-Wand::Wand() : Item(50, 3) { }
-std::string Wand::getType() const { return "WAND"; }
-
-HealthPotion::HealthPotion() : Item(50, 1) { }
-std::string HealthPotion::getType() const { return "HEALTH_POTION"; }
-
-AttackPotion::AttackPotion() : Item(10, 2) { }
-std::string AttackPotion::getType() const { return "ATTACK_POTION"; }
+Sword::Sword() : Item(30, 1, "SWORD") { }
+Dagger::Dagger() : Item(35, 2, "DAGGER") { }
+Wand::Wand() : Item(50, 3, "WAND") { }
+HealthPotion::HealthPotion() : Item(50, 1, "HEALTH_POTION") { }
+AttackPotion::AttackPotion() : Item(10, 2, "ATTACK_POTION") { }
