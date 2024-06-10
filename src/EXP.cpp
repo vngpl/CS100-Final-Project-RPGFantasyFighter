@@ -8,12 +8,12 @@ using namespace std;
 #include "../header/EXP.hpp"
 
 
-Experience::Experience(int level, double expNext, double exp, Character* character, Enemy* enemy) {
+Experience::Experience(int level, double exp, Character* character, Enemy* enemy) {
     this->level = level;
-    this->expNext = expNext;
+    this->expNext = (50.0/24) * (pow(this->level, 3) - 6 * pow(this->level, 2) + (this->level * 17) - 12);
     this->exp = exp;
     this->levelMonster = enemy->getLevel();
-    this->healthXP = character->getMAXHealth();
+    this->healthXP = character->getMaxHealth();
     this->strengthXP = character->getAttackStrength();
     this->healthMonster = enemy->getHealth();
     this->character = character; 
@@ -21,22 +21,24 @@ Experience::Experience(int level, double expNext, double exp, Character* charact
 
 double Experience::getEXP() { return exp; }
 
-double Experience::getNextEXP() { return this->expNext; }
+// double Experience::getNextEXP() { return this->expNext; }
 
 int Experience::getLevel() { return this->level; }
 
 int Experience::getLevelMonster() { return this->levelMonster; }
 
+// void setHealthMonster(double health) { healthMonster = enemy->getHealth(); }
+
 int Experience::getMonsterHealth() { return this->healthMonster; }
 
 int Experience::getHP() { return this->healthXP; }
 
-// void Experience::setNextEXP() { this->expNext = (50.0/24) * (pow(this->level, 3) - 6 * pow(this->level, 2) + (this->level * 17) - 12); }
+double Experience::getNextEXP() { return this->expNext = (50.0/24) * (pow(this->level, 3) - 6 * pow(this->level, 2) + (this->level * 17) - 12); }
 
 bool Experience::updateLevel() {
     bool leveledUp = false; // Flag to track if any level-up occurred
     
-    while (exp >= this->expNext) {
+    while (exp >= expNext) {
         this->level++; // Level up
         exp -= this->expNext; // Subtract experience
         this->expNext = (50.0/24) * (pow(this->level, 3) - 6 * pow(this->level, 2) + (this->level * 17) - 12); 
@@ -48,6 +50,15 @@ bool Experience::updateLevel() {
     return leveledUp; // Return true if any level-up occurred
 }
 
+// double Experience::gainExperience(double healthMonster, int levelMonster) {
+//     if (healthMonster <= 0) {
+//         return ((4.0 * pow(levelMonster, 3.0)) / 5.0); // Gain xp of Monster
+//     }
+//     else {
+//         return 0; // Haven't killed Monster
+//     }
+// }
+
 double Experience::gainExperience() {
     if (this->healthMonster <= 0) {
         exp += ((4.0 * pow(this->levelMonster, 3.0)) / 5.0); //Make the level gained by the monster 
@@ -58,6 +69,7 @@ double Experience::gainExperience() {
         return exp; //Havent killed Monster
     }
 }
+
 
 void Experience::pointAssign(int input) {
     int healthADD = 10;
@@ -75,7 +87,10 @@ void Experience::pointAssign(int input) {
             this->skillPoints--; // Decrease skillPoints by 1
         }
         else if (input == 2) {
-            strengthXP = strengthADD;
+            strengthXP += strengthADD;
+            if (character) {
+                character->setAttackStrength(strengthXP); // Update health using the Character object
+            }
             this->skillPoints--; // Decrease skillPoints by 1
         }
         else if (input == 0) {

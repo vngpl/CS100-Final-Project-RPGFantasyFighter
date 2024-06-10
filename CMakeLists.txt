@@ -18,3 +18,18 @@ list(FILTER SOURCES EXCLUDE REGEX "src/Shop.cpp")
 
 # Add executable for the project
 add_executable(final_proj ${SOURCES} header/Display.hpp)
+
+# add_executable(final_proj ${SOURCES})
+
+# add_executable(final_proj
+#     src/main.cpp
+#     src/Character.cpp
+#     src/Assassin.cpp
+#     src/Warrior.cpp
+#     src/Wizard.cpp
+#     src/Enemy.cpp
+#     src/Monster.cpp
+#     src/Inventory.cpp
+#     src/Item.cpp
+#     header/Display.hpp
+#     )

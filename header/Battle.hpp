@@ -8,7 +8,7 @@
 #include "Character.hpp"
 #include "Display.hpp"
 #include "Enemy.hpp"
-#include "Inventory.hpp"
+// #include "Inventory.hpp"
 
 class Battle {
  private:

@@ -4,11 +4,8 @@
 #include "Character.hpp"
 
 class Wizard : public Character {
-    private:
-
-    public:
+   public:
         Wizard();
-        std::string getType() const override;
 };
 
 #endif

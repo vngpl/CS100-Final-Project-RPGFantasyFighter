@@ -3,10 +3,11 @@
 
 #include "Assassin.hpp"
 #include "Battle.hpp"
+#include "Coins.hpp"
+#include "Diffi.hpp"
 #include "Display.hpp"
-#include "Inventory.hpp"
+#include "EXP.hpp"
 #include "Monster.hpp"
-#include "Shop.hpp"
 #include "Warrior.hpp"
 #include "Wizard.hpp"
 

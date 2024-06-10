@@ -4,11 +4,8 @@
 #include "Enemy.hpp"
 
 class Monster : public Enemy {
-    private:
-
-    public:
+   public:
         Monster();
-        std::string getType() const override;
 };
 
 #endif
