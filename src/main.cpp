@@ -47,15 +47,15 @@ int main() {
 			Display::printSettings();
 			switch (option) {
 				// 1. Easy
-				case 1:
+				case '1':
 					Difficulty::setEasy();
 					break;
         // 2. Medium
-				case 2:
+				case '2':
 					Difficulty::setNormal();
 					break;
 				// 3. Hard
-				case 3:
+				case '3':
 					Difficulty::setHard();
 					break;
 			}
