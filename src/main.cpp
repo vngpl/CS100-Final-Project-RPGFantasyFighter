@@ -173,3 +173,128 @@ const char& requestInput(char& option) {
 	Display::printNewline();
 	return option;
 }
+
+//User selects number that corresponds to Item on the screen with Fight, Items, and Run 
+//Change user's choice char to whatever our input variable is called
+std::cin >> x;
+
+if (x == 2){ //Change 2 to what our option for the Items screen is called 
+	printInventoryItems();
+	printItemOptions();
+
+	if (character->InventoryIsEmpty()){
+		//Break statement or loop back to Fight, Items, or Run Screen 
+	}
+
+	//User makes choice for weapon, potion, or if they have both 
+	cin >> x;
+
+	if (character->hasWeapon()){
+		if (x == "Y"){
+			if (inventory.at(0)->getType() == "SWORD"){
+				printUseSword();
+			}
+			else if (inventory.at(0)->getType() == "DAGGER"){
+				printUseDagger();
+			}
+			else{
+				printUseWand();
+			}
+
+			character->useItem(inventory.at(0)) //Change to how to access character's inventory first item 
+		}
+		if (x == "N"){
+			//Break statement or loop back to Fight, Items, or Run Screen 
+		}
+	}
+	else if (character->hasPotion()){
+		if (x == "Y"){
+			if (inventory.at(1)->getType() == "HEALTH_POTION"){
+				printUseHealthPotion();
+			}
+			else{
+				printUseAttackPotion();
+			}
+
+			character->useItem(inventory.at(1)) //Change to how to access character's inventory second item 
+		}
+		if (x == "N"){
+			//Break statement or loop back to Fight, Items, or Run Screen 
+		}
+	}
+	//Character has both weapon and potion in inventory 
+	else{
+		if (x == "W"){
+			if (inventory.at(0)->getType() == "SWORD"){
+				printUseSword();
+			}
+			else if (inventory.at(0)->getType() == "DAGGER"){
+				printUseDagger();
+			}
+			else{
+				printUseWand();
+			}
+
+			character->useItem(inventory.at(0)) //Change to how to access character's inventory first item 
+		}
+		if (x == "P"){
+			if (inventory.at(1)->getType() == "HEALTH_POTION"){
+				printUseHealthPotion();
+			}
+			else{
+				printUseAttackPotion();
+			}
+
+			character->useItem(inventory.at(1)) //Change to how to access character's inventory second item 
+		}
+		if (x == "N"){
+			//Break statement or loop back to Fight, Items, or Run Screen 
+		}
+	}
+}
+
+//User defeats Monster, 'shop' generates a random item that can be purchased by user 
+//Change Monster to whatever we call our created monster 
+if (Monster->getHealth() <= 0){
+
+	//Some display function outputting something like "You defeated monster"
+
+	Item* randItem = nullptr;
+	randItem = randItem->generateRandomItem(); 
+
+	if (randItem->getType() == "SWORD"){
+		printShopGenerateSword();
+	}
+	else if (randItem->getType() == "DAGGER"){
+		printShopGenerateDagger();
+	}
+	else if (randItem->getType() == "WAND"){
+		printShopGenerateWand();
+	}
+	else if (randItem->getType() == "HEALTH_POTION"){
+		printShopGenerateHealthPotion();
+	}
+	else{
+		printShopGenerateAttackPotion();
+	}
+
+	//The print statements above ask the user if they would like to buy the item generated (Y/N)
+	//change user's choice char to whatever our input variable is called
+	std::cin >> x; 
+
+	if (x == "N"){
+		//Display output of new level or monster OR loops back into screen with Fight, Items, and Run 
+		//Break statement here? 
+	}
+	else if (x == "Y"){
+		if (character->getCoins() >= randItem->getCost()){
+			character->addItem(randItem);
+			printItemBuyPass();
+			character->setCoins(character->getCoins() - randItem->getCost());
+		}
+		else{
+			printItemBuyFail();
+			//User did not have enough coins to buy item, go to next level/monster 
+		}
+	}
+}
