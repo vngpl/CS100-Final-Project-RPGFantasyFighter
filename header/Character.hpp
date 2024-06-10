@@ -12,6 +12,7 @@ class Character {
         std::string type;
         int level;
         double experience;
+        double nextExperience;
         int monstersSlain;
         int coins;
         std::vector<Item*> inventory;
