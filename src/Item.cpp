@@ -8,7 +8,7 @@ int Item::getStrength() const { return strength; }
 int Item::getCost() const { return cost; }
 void Item::setStrength(int newStrength) { strength = newStrength; }
 void Item::setCost(int newCost) { cost = newCost; }
-const std::string& Item::getType() { return type; }
+const std::string& Item::getType() const { return type; }
 
 Item* Item::generateRandomItem() {
     srand(time(0));

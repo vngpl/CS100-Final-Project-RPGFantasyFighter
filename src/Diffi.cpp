@@ -7,34 +7,28 @@ using namespace std;
 #include "../header/Enemy.hpp"
 #include "../header/Diffi.hpp"
 
-void Difficulty::setEasy(Enemy* enemy) {
-    enemy->setHealth(enemy->getHealth() * 0.5);
-    enemy->setAttackStrength(enemy->getAttackStrength() * 0.5);
+std::vector<Enemy*> Difficulty::allEnemies;
+
+void Difficulty::setEasy() {
+    for (Enemy* enemy : allEnemies) {
+            // Update health and attack strength for each enemy
+            enemy->setHealth(enemy->getHealth() * 0.5);
+            enemy->setAttackStrength(enemy->getAttackStrength() * 0.5);
+    }
 }
 
-void Difficulty::setNormal(Enemy* enemy) {    
+void Difficulty::setNormal() {    
     // Stays the same lol
 }
 
-void Difficulty::setHard(Enemy* enemy) {
-    enemy->setHealth(enemy->getHealth() * 1.5);
-    enemy->setAttackStrength(enemy->getAttackStrength() * 1.5);
+void Difficulty::setHard() {
+    for (Enemy* enemy : allEnemies) {
+            // Update health and attack strength for each enemy
+            enemy->setHealth(enemy->getHealth() * 1.5);
+            enemy->setAttackStrength(enemy->getAttackStrength() * 1.5);
+    }
 }
 
-pair<double, double> Difficulty::userDifficulty(int userInput, Enemy* enemy) {
-    switch (userInput) {
-        case 1:
-            setEasy(enemy);
-            break;
-        case 2:
-            setNormal(enemy);
-            break;
-        case 3:
-            setHard(enemy);
-            break;
-        default:
-            setEasy(enemy);
-            break;
-    }
-    return {enemy->getHealth(), enemy->getAttackStrength()};
+void Difficulty::addEnemy(Enemy* enemy) {
+    allEnemies.push_back(enemy);
 }

@@ -29,9 +29,9 @@ class Display {
 
 		static void printSettings() {
 			std::cout << "CHOOSE GAME DIFFICULTY: " << std::endl << std::endl
-					  << "1. Easy" << std::endl
-					  << "2. Medium" << std::endl
-					  << "3. Hard" << std::endl << std::endl;
+					  << "1. EASY" << std::endl
+					  << "2. MEDIUM" << std::endl
+					  << "3. HARD" << std::endl << std::endl;
 			std::cout << "SELECT AN OPTION: ";
 		}
 
@@ -79,7 +79,6 @@ class Display {
 			std::cout << "EXP(current): " << character->getExperience() << "/" << character->getNextExperience()
 			<< std::endl;
 		}
-
 
 		static void printType(Character *character) {
 			std::cout << "TYPE: " << character->getType() << std::endl << std::endl;
@@ -173,19 +172,19 @@ class Display {
 		}
 
 		static void printItemOptions(Character* character){
-			if (character->IsEmpty()) {
+			if (character->inventoryIsEmpty()) {
 				std::cout << "No item can be used." << std::endl;
 			}
 			else if (character->hasWeapon()) {
         		std::cout << "Equip the weapon? Y/N" << std::endl;
-    		}	
+    		}
 			else if (character->hasPotion()) {
 				std::cout << "Apply the potion? Y/N" << std::endl;
 			}
 			else {
 				std::cout << "Use weapon or potion? N/W/P" << std::endl;
 			}
-		}	
+		}
 
 
 

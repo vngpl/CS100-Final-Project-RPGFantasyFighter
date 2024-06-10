@@ -28,6 +28,7 @@ class Character {
         int getMonstersSlain() const;
         int getCoins() const;
         double getExperience() const;
+        double getNextExperience() const; ///NEW
         double getAttackStrength() const;
         virtual const std::string& getType() const;
         const std::vector<Item*>& getInventoryItems() const;
@@ -35,6 +36,7 @@ class Character {
         void setCoins(int);
         void setHealth(int);
         void setExperience(double);
+        void setNextExperience(double); ///NEW
         void updateMonsterSlainCount();
         void setAttackStrength(double);
 

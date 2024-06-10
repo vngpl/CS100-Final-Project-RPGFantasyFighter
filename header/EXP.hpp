@@ -26,14 +26,15 @@ class Experience {
 
     public:
         bool updateLevel();
+        // static double gainExperience(double,int);
         double gainExperience();
         void pointAssign(int);
 
         Experience() {} // Default constructor
-        Experience(int, double, double, Character*, Enemy*);
-        // void setNextEXP();
-        double getEXP();
+        Experience(int, double, Character*, Enemy*);
         double getNextEXP();
+        double getEXP();
+        // double getNextEXP();
         int getLevel();
         int getLevelMonster();
         int getHP();
