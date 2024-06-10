@@ -17,6 +17,7 @@ int Character::getLevel() const { return level; }
 int Character::getMonstersSlain() const { return monstersSlain; }
 int Character::getCoins() const { return coins; }
 double Character::getExperience() const { return experience; }
+double Character::getNextExperience() const { return nextExperience; } //NEW
 double Character::getAttackStrength() const { return attackStrength; }
 const std::string& Character::getType() const { return type; }
 const std::vector<Item*>& Character::getInventoryItems() const { return inventory; }
@@ -25,6 +26,7 @@ void Character::setHealth(int newHealth) { health = newHealth; }
 void Character::updateMonsterSlainCount() { monstersSlain++; }
 void Character::setCoins(int newCoins) { coins = newCoins; }
 void Character::setExperience(double newExperience) { experience = newExperience; }
+void Character::setNextExperience(double newNextExperience) {nextExperience = newNextExperience; } //NEW
 void Character::setAttackStrength(double newAttackStrength) { attackStrength = newAttackStrength; }
 
 bool Character::inventoryIsEmpty() const { return (inventory.at(0) == nullptr && inventory.at(1) == nullptr); }

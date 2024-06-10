@@ -47,16 +47,16 @@ int main() {
 			Display::printSettings();
 			switch (option) {
 				// 1. Easy
-				case '1':
-					// Difficulty::setEasy();
-				// 2. Medium
+				case 1:
+					Difficulty::setEasy();
 					break;
-				case '2':
-					// Difficulty::setNormal();
+        // 2. Medium
+				case 2:
+					Difficulty::setNormal();
 					break;
 				// 3. Hard
-				case '3':
-					// Difficulty::setHard();
+				case 3:
+					Difficulty::setHard();
 					break;
 			}
 			break;
@@ -66,6 +66,58 @@ int main() {
 			Display::printQuit(player);
 			break;
 	}
+
+
+	// Display::printCharacterInformation(player);
+
+	// //Start battle with monster
+	// Enemy* enemy = new Monster();
+	// //FINSHED BATTLE
+	// enemy->setHealth(-1000); //ded
+
+
+	// //ADD BATTLE HERE before gainning coins, exp, shop, and levelup
+
+
+	// //Give EXP for winning
+	// Experience *charExperience = new Experience(player->getLevel(), player->getExperience(), player, enemy);
+	// player->setExperience(charExperience->gainExperience());
+	// player->setNextExperience(charExperience->getNextEXP());
+	// Display::printExperience(player);
+
+	// // Check if they leveled up
+	// bool levelup = charExperience->updateLevel();
+	// //If user leveled up tell them
+	// if (levelup) {
+	// 	Display::printLEVELUP(player);
+	// 	//Ask if user wants to allocate stats
+	// 	// Display::printAttackStrength(player); //old attack
+	// 	Display::printStatAllocation(player);
+	// 	int numInput = std::stoi(requestInput());
+	// 	if (numInput == 1) {
+	// 		Display::printHealth(player);
+	// 		charExperience->pointAssign(numInput);
+	// 		Display::printNEWHealth(player);
+	// 	}
+	// 	else if (numInput == 2) {
+	// 		Display::printAttackStrength(player);
+	// 		charExperience->pointAssign(numInput);
+	// 		Display::printNEWAttackStrength(player);
+	// 	}
+	// 	else {
+	// 		Display::printInvalidInput();
+	// 	}
+	// }
+	// else {
+	// 	//Just show how much needed for next level
+	// 	Display::printLevelcount(player);
+	// }
+
+	// //Give Coins for winning
+	// Coins* coins = new Coins(1,10);
+	// coins->addCoinsOnMONSERdeath(enemy->getHealth());
+	// player->setCoins(coins->getAmountCoins());
+	// Display::printCoins(player);
 
 	Display::printNewline();
 
