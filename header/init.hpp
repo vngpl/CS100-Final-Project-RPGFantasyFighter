@@ -2,11 +2,12 @@
 #define __INIT_HPP__
 
 #include "Assassin.hpp"
+#include "Battle.hpp"
+#include "Display.hpp"
+#include "Inventory.hpp"
+#include "Monster.hpp"
+#include "Shop.hpp"
 #include "Warrior.hpp"
 #include "Wizard.hpp"
-#include "Display.hpp"
-#include "Monster.hpp"
-#include "Inventory.hpp"
-#include "Shop.hpp"
 
 #endif

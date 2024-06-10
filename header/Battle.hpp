@@ -12,8 +12,8 @@
 
 class Battle {
  private:
-  static int32_t option;
-  static int32_t itemIntex;
+  int32_t option;
+  int32_t itemIntex;
   bool fight_impl(Character* attacker, Enemy* defender);
   bool fight_impl(Enemy* attacker, Character* defender);
 
