@@ -6,6 +6,7 @@
 class Assassin : public Character {
     public:
         Assassin();
+        void performSpecialAbility() override;
 };
 
 #endif

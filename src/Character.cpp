@@ -1,7 +1,7 @@
 #include "../header/Character.hpp"
 
 Character::Character(int health, double attackStrength, const std::string& type)
-    : health(health), attackStrength(attackStrength), type(type), MAX_HEALTH(health), level(5), experience(0.0), monstersSlain(0), coins(0), inventory(2, nullptr) { }
+    : MAX_HEALTH(health), health(health), attackStrength(attackStrength), type(type), level(5), experience(0.0), monstersSlain(0), coins(0), inventory(2, nullptr) { }
 
 Character::~Character() {
     for (Item*& item : inventory) {

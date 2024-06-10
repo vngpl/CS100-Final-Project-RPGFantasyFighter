@@ -16,6 +16,9 @@ add_executable(final_proj
     src/Enemy.cpp
     src/Monster.cpp
     src/Item.cpp
+    src/Battle.cpp
     header/Display.hpp
     src/Diffi.cpp
-    )
+)
+
+target_compile_options(final_proj PRIVATE -Wall -Wuninitialized -Werror)

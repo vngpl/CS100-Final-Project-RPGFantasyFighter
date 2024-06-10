@@ -60,6 +60,7 @@ class Display {
 			std::cout << "MONSTER ATTACK STRENGTH: " << enemy->getAttackStrength() << std::endl;
 		}
 
+		static void printType(Character* character) {
 			std::cout << "TYPE: " << character->getType() << std::endl << std::endl;
 		}
 
@@ -79,9 +80,7 @@ class Display {
 			std::cout << "ATTACK STRENGTH: " << character->getAttackStrength() << std::endl << std::endl;
 		}
 
-
-
-		//DISPLAY EACH MONSTER STAT 
+		//DISPLAY EACH MONSTER STAT
 		static void printAttackStrengthMONSTER(Enemy *enemy) {
 			std::cout << "MONSTER ATTACK STRENGTH: " << enemy->getAttackStrength() << std::endl << std::endl;
 		}
@@ -93,8 +92,6 @@ class Display {
 		static void printLevelMONSTER(Enemy *enemy) {
 			std::cout << "MONSTER LEVEL: " << enemy->getLevel() << std::endl << std::endl;
 		}
-
-
 
 		static void printDeath(Character* character) {
 			std::cout << "YOU HAVE DIED." << std::endl << std::endl;
@@ -162,8 +159,6 @@ class Display {
 			}
 		}
 
-
-
 		static void printUseSword(){
 			std::cout << "Sword equiped! Attack boosted." << std::endl;
 		}
@@ -184,8 +179,6 @@ class Display {
 			std::cout << "Health potion applied. Health recovered." << std::endl;
 		}
 
-
-
 		static void printShopGenerateSword(){
 			std::cout << "The shop spawned a Sword, with cost 1. Will you buy? Y/N" << std::endl;
 		}
@@ -205,8 +198,6 @@ class Display {
 		static void printShopGenerateHealthPotion(){
 			std::cout << "The shop spawned a Health Potion, with cost 1. Will you buy? Y/N" << std::endl;
 		}
-
-
 
 		static void printItemBuyFail(){
 			std::cout << "Not enough coins to buy." << std::endl;
