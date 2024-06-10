@@ -18,13 +18,13 @@ class Coins {
         Enemy* enemy;
     public:
         // CONSTRUCTOR TO INITIALIZE THE COIN AMOUNT TO 0
-        // Coins () {}
+        Coins () {}
         Coins(int minCoins = 1, int maxCoins = 10); //Character* character
 
         // WHEN MONSTER DIES RANDOM 3-10 COINS WILL BE ADDED
-        void addCoinsOnMONSERdeath();
+        void addCoinsOnMONSERdeath(int);
         int getAmountCoins() const;
-        int setUpdateCoins(int);
+        void setUpdateCoins(int); 
 
 };
 

@@ -60,6 +60,28 @@ class Display {
 			std::cout << "MONSTER ATTACK STRENGTH: " << enemy->getAttackStrength() << std::endl;
 		}
 
+		static void printStatAllocation(Character *character) {
+			std::cout << "CHOOSE STAT ALLOCATION: " << std::endl << std::endl
+					  << "1. Upgrade Health" << std::endl
+					  << "2. Upgrade Strength" << std::endl << std::endl;
+			std::cout << "SELECT AN OPTION: ";
+		}
+
+		static void printNEWAttackStrength(Character *character) {
+			std::cout << "ATTACK STRENGTH (ADDED +5): " << character->getAttackStrength() << std::endl << std::endl;
+		}
+
+		static void printNEWHealth(Character *character) {
+			std::cout << "HEALTH (ADDED +10): " << character->getHealth() << std::endl << std::endl;
+		}
+
+		static void printLevelcount(Character *character) {
+			std::cout << "EXP(current): " << character->getExperience() << "/" << character->getNextExperience()
+			<< std::endl;
+		}
+
+
+		static void printType(Character *character) {
 			std::cout << "TYPE: " << character->getType() << std::endl << std::endl;
 		}
 
@@ -79,6 +101,9 @@ class Display {
 			std::cout << "ATTACK STRENGTH: " << character->getAttackStrength() << std::endl << std::endl;
 		}
 
+		static void printCoins(Character *character) {
+			std::cout << "COINS: " << character->getCoins() << std::endl << std::endl;
+		}
 
 
 		//DISPLAY EACH MONSTER STAT 
