@@ -1,94 +1,105 @@
-#include "../header/Character.hpp"
+#include <gtest/gtest.h>
+
+#include <ctime>
+
+#include "../header/Assassin.hpp"
 #include "../header/Item.hpp"
-#include "gtest/gtest.h"
 
-//Unit tests for items, inventory, and shop generate item 
+// Unit tests for items, inventory, and shop generate item
 
-//Test for getStrength function
-TEST(ItemTest, getStrength){
-    Sword sword; 
-    EXPECT_EQ(sword.getStrength(), 30);
+// Test for getStrength function
+TEST(ItemTest, getStrength) {
+  Sword* sword = new Sword();
+  EXPECT_EQ(sword->getStrength(), 30);
+  delete sword;
 }
 
-//Test for getCost function
-TEST(ItemTest, getCost){
-    Sword sword; 
-    EXPECT_EQ(sword.getCost(), 1);
+// Test for getCost function
+TEST(ItemTest, getCost) {
+  Sword* sword = new Sword();
+  EXPECT_EQ(sword->getCost(), 1);
+  delete sword;
 }
 
-//Test for getType function
-TEST(Itemtest, getType){
-    Sword sword;
-    EXPECT_EQ(sword.getType(), "SWORD");
+// Test for getType function
+TEST(ItemTest, getType) {
+  Sword* sword = new Sword();
+  EXPECT_EQ(sword->getType(), "SWORD");
+  delete sword;
 }
 
-
-
-//Test for setStrength function
-TEST(ItemTest, setStrength){
-    Dagger dagger;
-    dagger.setStrength(40);
-    EXPECT_EQ(dagger.getStrength(), 40);
+// Test for setStrength function
+TEST(ItemTest, setStrength) {
+  Dagger* dagger = new Dagger();
+  dagger->setStrength(40);
+  EXPECT_EQ(dagger->getStrength(), 40);
+  delete dagger;
 }
 
-//Test for setCost function
-TEST(ItemTest, setCost){
-    Dagger dagger;
-    dagger.setCost(5);
-    EXPECT_EQ(dagger.getCost(), 5);
+// Test for setCost function
+TEST(ItemTest, setCost) {
+  Dagger* dagger = new Dagger();
+  dagger->setCost(5);
+  EXPECT_EQ(dagger->getCost(), 5);
+  delete dagger;
 }
 
-
-
-//Test for inventoryIsEmpty
-TEST(CharacterTest, inventoryIsEmpty){
-    Character* character; 
-    Wand wand; 
-    character->addItem(wand);
-    EXPECT_FALSE(character->inventoryIsEmpty());
+// Test for inventoryIsEmpty
+TEST(CharacterTest, inventoryIsEmpty) {
+  Assassin* character = new Assassin();
+  Wand* wand = new Wand();
+  character->addItem(wand);
+  EXPECT_FALSE(character->inventoryIsEmpty());
+  delete wand;
+  delete character;
 }
 
-//Test for hasWeapon
-TEST(CharacterTest, hasWeapon){
-    Character* character;
-    Wand wand; 
-    character->addItem(wand);
-    EXPECT_TRUE(character->hasWeapon());
+// Test for hasWeapon
+TEST(CharacterTest, hasWeapon) {
+  Assassin* character = new Assassin();
+  Wand* wand = new Wand();
+  character->addItem(wand);
+  EXPECT_TRUE(character->hasWeapon());
+  delete wand;
+  delete character;
 }
 
-//Test for hasPotion
-TEST(CharacterTest, hasPotion){
-    Character* character;
-    HealthPotion potion; 
-    character->addItem(potion);
-    EXPECT_TRUE(character->hasPotion());
+// Test for hasPotion
+TEST(CharacterTest, hasPotion) {
+  Assassin* character = new Assassin();
+  HealthPotion* potion = new HealthPotion();
+  character->addItem(potion);
+  EXPECT_TRUE(character->hasPotion());
+  delete potion;
+  delete character;
 }
 
-//Test for addItem 
-TEST(CharacterTest, addItem){
-    Character* character;
-    Sword sword; 
-    
-    character.addItem(sword);
-    
-    ASSERT_EQ(character.getInventoryItems().at(0)->getType(), "SWORD");
+// Test for addItem
+TEST(CharacterTest, addItem) {
+  Assassin* character = new Assassin();
+  Sword* sword = new Sword();
+  character->addItem(sword);
+  ASSERT_EQ(character->getInventoryItems().at(0)->getType(), "SWORD");
+  delete sword;
+  delete character;
 }
 
-//Test for useItem
+// Test for useItem
 TEST(CharacterTest, UseItem) {
-    Character* character;
-    AttackPotion* potion;
-
-    character.addItem(potion);
-    character.useItem(1); 
-
-    ASSERT_EQ(character.getInventoryItems().at(1), nullptr);
+  Assassin* character = new Assassin();
+  AttackPotion* potion = new AttackPotion();
+  character->addItem(potion);
+  character->useItem(0);
+  ASSERT_EQ(character->getInventoryItems().at(0), nullptr);
+  delete potion;
+  delete character;
 }
 
-
-//Test for generateRandomItem function
-TEST(ItemTest, GenerateRandomItem){
-    srand(time(0)); 
-    Item* randItem = Item::generateRandomItem();
-    ASSERT_NE(randItem, nullptr); 
+// Test for generateRandomItem function
+TEST(ItemTest, GenerateRandomItem) {
+  srand(
+      static_cast<unsigned int>(time(0)));  // Seed the random number generator
+  Item* randItem = Item::generateRandomItem();
+  ASSERT_NE(randItem, nullptr);
+  delete randItem;
 }

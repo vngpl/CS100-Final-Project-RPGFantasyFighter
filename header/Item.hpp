@@ -18,7 +18,7 @@ class Item {
   void setStrength(int);
   void setCost(int);
   virtual const std::string& getType() const;
-  Item* generateRandomItem();
+  static Item* generateRandomItem();
 };
 
 class Sword : public Item {

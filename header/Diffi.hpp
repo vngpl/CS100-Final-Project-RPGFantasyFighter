@@ -4,7 +4,7 @@
 
 #ifndef __DIFFICULT_H__
 #define __DIFFICULT_H__
-#include <utility>  // for std::pair
+#include <vector>
 
 #include "../header/Enemy.hpp"
 

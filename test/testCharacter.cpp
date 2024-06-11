@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+
 #include "../header/Character.hpp"
 
 TEST(CharacterTest, HealthTest) {
@@ -12,7 +13,7 @@ TEST(CharacterTest, LevelTest) {
 }
 
 TEST(CharacterTest, AddItemTest) {
-    Character testCharacter(100, 100, 1, "TEST CHARACTER");
+    Character testCharacter(100, 100, 5, "TEST CHARACTER");
     testCharacter.addItem(new Item("SWORD", 20));
 
     const std::vector<Item*>& inventory = testCharacter.getInventoryItems();
