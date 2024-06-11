@@ -10,17 +10,16 @@ using namespace std;
 Experience::Experience(int level, double exp, Character* character, Enemy* enemy)
     : level(level), exp(exp) {
   // level = level;
-  expNext = (50.0 / 24) * (pow(level, 3) - 6 * pow(level, 2) + (level * 17) - 12);
+  expNext = character->getNextExperience();
   // exp = exp;
   levelMonster = enemy->getLevel();
-  healthXP = character->getMaxHealth();
-  strengthXP = character->getAttackStrength();
+  // healthXP = character->getMaxHealth();
+  // strengthXP = character->getAttackStrength();
   healthMonster = enemy->getHealth();
   this->character = character;
 }
 
-double Experience::getEXP() {
-  return exp;
+double Experience::getEXP() {  return exp;
 }
 
 // double Experience::getNextEXP() { return expNext; }
@@ -48,20 +47,39 @@ double Experience::getNextEXP() {
                          (pow(level, 3) - 6 * pow(level, 2) + (level * 17) - 12);
 }
 
+// bool Experience::updateLevel() {
+//   bool leveledUp = false;  // Flag to track if any level-up occurred
+
+//   while (exp >= expNext) {
+//     level++;         // Level up
+//     exp -= expNext;  // Subtract experience
+//     expNext =
+//         (50.0 / 24) * (pow(level, 3) - 6 * pow(level, 2) + (level * 17) - 12);
+//     // Calculate experience required for the next level
+//     skillPoints++;  // Gain a skill point to allocate to strength or health
+//     leveledUp = true;     // Set flag to true indicating a level-up occurred
+//   }
+
+//   return leveledUp;  // Return true if any level-up occurred
+// }
+
 bool Experience::updateLevel() {
-  bool leveledUp = false;  // Flag to track if any level-up occurred
+    bool leveledUp = false; // Flag to track if any level-up occurred
 
-  while (exp >= expNext) {
-    level++;         // Level up
-    exp -= expNext;  // Subtract experience
-    expNext =
-        (50.0 / 24) * (pow(level, 3) - 6 * pow(level, 2) + (level * 17) - 12);
-    // Calculate experience required for the next level
-    skillPoints++;  // Gain a skill point to allocate to strength or health
-    leveledUp = true;     // Set flag to true indicating a level-up occurred
-  }
-
-  return leveledUp;  // Return true if any level-up occurred
+    cout << this->expNext << endl;
+    cout << exp << endl;
+    
+    while (exp >= this->expNext) {
+        this->level++; // Level up
+        character->setLevel(level);
+        exp -= this->expNext; // Subtract experience
+        this->expNext = (50.0/24) * (pow(this->level, 3) - 6 * pow(this->level, 2) + (this->level * 17) - 12); 
+        // Calculate experience required for the next level
+        this->skillPoints++; // Gain a skill point to allocate to strength or health
+        leveledUp = true; // Set flag to true indicating a level-up occurred
+    }
+    // cout << this->expNext << endl;
+    return leveledUp; // Return true if any level-up occurred
 }
 
 // double Experience::gainExperience(double healthMonster, int levelMonster) {
@@ -91,6 +109,7 @@ void Experience::pointAssign(int input) {
 
   while (spendingSkillPoints && skillPoints > 0) {
     if (input == 1) {
+      healthXP = character->getHealth();
       healthXP += healthADD;
       if (character) {
         character->setHealth(healthXP);  // Update health using the Character object
@@ -98,6 +117,7 @@ void Experience::pointAssign(int input) {
       // void Character::setHealth(int newHealth) { health = newHealth; }
       skillPoints--;  // Decrease skillPoints by 1
     } else if (input == 2) {
+      strengthXP = character->getAttackStrength();
       strengthXP += strengthADD;
       if (character) {
         character->setAttackStrength(strengthXP);  // Update health using the Character object

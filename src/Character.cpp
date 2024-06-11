@@ -62,6 +62,9 @@ void Character::setExperience(double newExperience) {
 }
 void Character::setNextExperience(
     double newNextExperience) { nextExperience = newNextExperience; }  // NEW
+void Character::setLevel(int newLevel) {
+  level = newLevel;
+}
 void Character::setAttackStrength(double newAttackStrength) {
   attackStrength = newAttackStrength;
 }

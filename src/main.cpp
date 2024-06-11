@@ -107,6 +107,7 @@ int main() {
               } else {
                 // TODO: Winning the round display
                 std::cerr << "You win this game!" << std::endl;
+                enemy->setHealth(0);
               }
               is_valid = true;
               break;
@@ -167,6 +168,7 @@ int main() {
               break;
             }
           default:
+            is_valid = true;
             break;
         }
       } else {
@@ -175,7 +177,7 @@ int main() {
       }
 
       // Give Coins for winning
-      Coins* coins = new Coins(1, 10);
+      Coins* coins = new Coins(1, 10, player);
       coins->addCoinsOnMONSERdeath(enemy->getHealth());
       player->setCoins(coins->getAmountCoins());
       Display::printCoins(player);
@@ -351,293 +353,293 @@ const std::string requestInput(const int32_t num) {
 // }
 
 
-#include <iostream>
-#include "../header/init.hpp"
+// #include <iostream>
+// #include "../header/init.hpp"
 
-bool invalid123(const char& option);
-bool invalidYN(const char& option);
-bool invalidNWP(const char& option);
-const char& getInput(char& option);
+// bool invalid123(const char& option);
+// bool invalidYN(const char& option);
+// bool invalidNWP(const char& option);
+// const char& getInput(char& option);
 
-int main() {
-	Character* player = nullptr;
-	char option;
+// int main() {
+// 	Character* player = nullptr;
+// 	char option;
 
-    Display::printIntro();
+//     Display::printIntro();
 
-    switch (getInput(option)) {
-        case '1':
-            Difficulty::setEasy();
-            break;
-        case '2':
-            Difficulty::setNormal();
-            break;
-        case '3':
-            Difficulty::setHard();
-            break;
-    }
+//     switch (getInput(option)) {
+//         case '1':
+//             // Difficulty::setEasy();
+//             break;
+//         case '2':
+//             // Difficulty::setNormal();
+//             break;
+//         case '3':
+//             // Difficulty::setHard();
+//             break;
+//     }
 
-    Display::printCharacterCreation();
+//     Display::printCharacterCreation();
 
-    switch (getInput(option)) {
-        case '1':
-            player = new Assassin();
-            break;
-        case '2':
-            player = new Warrior();
-            break;
-        case '3':
-            player = new Wizard();
-            break;
-    }
+//     switch (getInput(option)) {
+//         case '1':
+//             player = new Assassin();
+//             break;
+//         case '2':
+//             player = new Warrior();
+//             break;
+//         case '3':
+//             player = new Wizard();
+//             break;
+//     }
 
-	player->addItem(new Sword());
-	player->addItem(new HealthPotion());
-	// if (player != nullptr) {
-	// 	Display::printCharacterInformation(player);
-	// }
+// 	// player->addItem(new Sword());
+// 	// player->addItem(new HealthPotion());
+// 	// // if (player != nullptr) {
+// 	// // 	Display::printCharacterInformation(player);
+// 	// // }
 
-	Display::printBattleOptions();
+// 	// Display::printBattleOptions();
 
-	switch (getInput(option)) {
-        case '1':
-            // finish
-            break;
-        case '2':
-			if (player->inventoryIsEmpty()) {
-				Display::printInventoryIsEmpty(player);
-				break;
-			}
-			Display::printInventoryItems(player);
-			Display::printItemOptions(player);
-			if (character->hasWeapon()) {
-				switch (getInput(option)) {
-					case 'N':
-						break;
-					case 'Y':
-						if (inventory.at(0)->getType() == "SWORD"){
-							Display::printUseSword();
-						}
-						else if (inventory.at(0)->getType() == "DAGGER"){
-							Display::printUseDagger();
-						}
-						else{
-							Display::printUseWand();
-						}
-						character->useItem(inventory.at(0));
-						break;
-				}
-			}
-			else if (character->hasPotion()) {
-				switch (getInput(option)) {
-					case 'N':
-						break;
-					case 'Y':
-						if (inventory.at(1)->getType() == "HEALTH_POTION"){
-							Display::printUseHealthPotion();
-						}
-						else {
-							Display::printUseAttackPotion();
-						}
-						character->useItem(inventory.at(1));
-						break;
-				}
-			}
-			else {
-				switch (getInput(option)) {
-					case 'N':
-						break;
-					case 'W':
-						if (inventory.at(0)->getType() == "SWORD"){
-							Display::printUseSword();
-						}
-						else if (inventory.at(0)->getType() == "DAGGER"){
-							Display::printUseDagger();
-						}
-						else{
-							Display::printUseWand();
-						}
-						character->useItem(inventory.at(0));
-						break;
-					case 'P':
-						if (inventory.at(1)->getType() == "HEALTH_POTION"){
-							Display::printUseHealthPotion();
-						}
-						else {
-							Display::printUseAttackPotion();
-						}
-						character->useItem(inventory.at(1));
-						break;
-				}
-			}
-            break;
-        case '3':
-            player = new Wizard();
-            break;
-    }
-
-
-	// Display::printInventoryItems(player);
-
-	// Display::printQuit(player);
-    // std::exit(EXIT_SUCCESS);
-
-    // while (game.getInput() != 'Q') {
-    //     Display::printBattleOptions();
-	// 	game.getInput();
-    // }
+// 	// switch (getInput(option)) {
+//   //       case '1':
+//   //           // finish
+//   //           break;
+//   //       case '2':
+// 	// 		if (player->inventoryIsEmpty()) {
+// 	// 			Display::printInventoryIsEmpty(player);
+// 	// 			break;
+// 	// 		}
+// 	// 		Display::printInventoryItems(player);
+// 	// 		Display::printItemOptions(player);
+// 	// 		if (character->hasWeapon()) {
+// 	// 			switch (getInput(option)) {
+// 	// 				case 'N':
+// 	// 					break;
+// 	// 				case 'Y':
+// 	// 					if (inventory.at(0)->getType() == "SWORD"){
+// 	// 						Display::printUseSword();
+// 	// 					}
+// 	// 					else if (inventory.at(0)->getType() == "DAGGER"){
+// 	// 						Display::printUseDagger();
+// 	// 					}
+// 	// 					else{
+// 	// 						Display::printUseWand();
+// 	// 					}
+// 	// 					character->useItem(inventory.at(0));
+// 	// 					break;
+// 	// 			}
+// 	// 		}
+// 	// 		else if (character->hasPotion()) {
+// 	// 			switch (getInput(option)) {
+// 	// 				case 'N':
+// 	// 					break;
+// 	// 				case 'Y':
+// 	// 					if (inventory.at(1)->getType() == "HEALTH_POTION"){
+// 	// 						Display::printUseHealthPotion();
+// 	// 					}
+// 	// 					else {
+// 	// 						Display::printUseAttackPotion();
+// 	// 					}
+// 	// 					character->useItem(inventory.at(1));
+// 	// 					break;
+// 	// 			}
+// 	// 		}
+// 	// 		else {
+// 	// 			switch (getInput(option)) {
+// 	// 				case 'N':
+// 	// 					break;
+// 	// 				case 'W':
+// 	// 					if (inventory.at(0)->getType() == "SWORD"){
+// 	// 						Display::printUseSword();
+// 	// 					}
+// 	// 					else if (inventory.at(0)->getType() == "DAGGER"){
+// 	// 						Display::printUseDagger();
+// 	// 					}
+// 	// 					else{
+// 	// 						Display::printUseWand();
+// 	// 					}
+// 	// 					character->useItem(inventory.at(0));
+// 	// 					break;
+// 	// 				case 'P':
+// 	// 					if (inventory.at(1)->getType() == "HEALTH_POTION"){
+// 	// 						Display::printUseHealthPotion();
+// 	// 					}
+// 	// 					else {
+// 	// 						Display::printUseAttackPotion();
+// 	// 					}
+// 	// 					character->useItem(inventory.at(1));
+// 	// 					break;
+// 	// 			}
+// 	// 		}
+//   //           break;
+//   //       case '3':
+//   //           player = new Wizard();
+//   //           break;
+//   //   }
 
 
-	// //Start battle with monster
-	// Enemy* enemy = new Monster();
-	// //FINSHED BATTLE
-	// enemy->setHealth(-1000); //ded
+// 	// Display::printInventoryItems(player);
 
-	// //ADD BATTLE HERE before gainning coins, exp, shop, and levelup
+// 	// Display::printQuit(player);
+//     // std::exit(EXIT_SUCCESS);
 
-	// //Give EXP for winning
-	// Experience *charExperience = new Experience(player->getLevel(), player->getExperience(), player, enemy);
-	// player->setExperience(charExperience->gainExperience());
-	// player->setNextExperience(charExperience->getNextEXP());
-	// Display::printExperience(player);
-
-	// // Check if they leveled up
-	// bool levelup = charExperience->updateLevel();
-	// //If user leveled up tell them
-	// if (levelup) {
-	// 	Display::printLEVELUP(player);
-	// 	//Ask if user wants to allocate stats
-	// 	// Display::printAttackStrength(player); //old attack
-	// 	Display::printStatAllocation(player);
-	// 	int numInput = std::stoi(requestInput());
-	// 	if (numInput == 1) {
-	// 		Display::printHealth(player);
-	// 		charExperience->pointAssign(numInput);
-	// 		Display::printNEWHealth(player);
-	// 	}
-	// 	else if (numInput == 2) {
-	// 		Display::printAttackStrength(player);
-	// 		charExperience->pointAssign(numInput);
-	// 		Display::printNEWAttackStrength(player);
-	// 	}
-	// 	else {
-	// 		Display::printInvalidInput();
-	// 	}
-	// }
-	// else {
-	// 	//Just show how much needed for next level
-	// 	Display::printLevelcount(player);
-	// }
-
-	// //Give Coins for winning
-	// Coins* coins = new Coins(1,10);
-	// coins->addCoinsOnMONSERdeath(enemy->getHealth());
-	// player->setCoins(coins->getAmountCoins());
-	// Display::printCoins(player);
-
-	// Display::printNewline();
-
-	// while (!player->isDead()) {
-		// Display::printBattleOptions();
-		// // Battle battle;
-
-		// switch (requestInput(option)) {
-		// 	case '1':
-		// 		// finish
-		// 		break;
-		// 	case '2':
-		// 		// finish
-		// 		break;
-		// 	case '3':
-		// 		// finish
-		// 		break;
-
-		// }
-	// }
-
-	// Display::printCharacterInformation(player);
+//     // while (game.getInput() != 'Q') {
+//     //     Display::printBattleOptions();
+// 	// 	game.getInput();
+//     // }
 
 
-	// Display::printNewline();
+// 	// //Start battle with monster
+// 	// Enemy* enemy = new Monster();
+// 	// //FINSHED BATTLE
+// 	// enemy->setHealth(-1000); //ded
 
-	//SHOW STATS THAT CHANGE MONSTER CLASS
-	// Display::printAttackStrengthMONSTER(enemy);
-	// Display::printHealthMONSTER(enemy);
-	// Display::printLevelMONSTER(enemy);
+// 	// //ADD BATTLE HERE before gainning coins, exp, shop, and levelup
 
-	// Display::printInventoryItems(player);
+// 	// //Give EXP for winning
+// 	// Experience *charExperience = new Experience(player->getLevel(), player->getExperience(), player, enemy);
+// 	// player->setExperience(charExperience->gainExperience());
+// 	// player->setNextExperience(charExperience->getNextEXP());
+// 	// Display::printExperience(player);
 
-	delete player;
-	player = nullptr;
+// 	// // Check if they leveled up
+// 	// bool levelup = charExperience->updateLevel();
+// 	// //If user leveled up tell them
+// 	// if (levelup) {
+// 	// 	Display::printLEVELUP(player);
+// 	// 	//Ask if user wants to allocate stats
+// 	// 	// Display::printAttackStrength(player); //old attack
+// 	// 	Display::printStatAllocation(player);
+// 	// 	int numInput = std::stoi(requestInput());
+// 	// 	if (numInput == 1) {
+// 	// 		Display::printHealth(player);
+// 	// 		charExperience->pointAssign(numInput);
+// 	// 		Display::printNEWHealth(player);
+// 	// 	}
+// 	// 	else if (numInput == 2) {
+// 	// 		Display::printAttackStrength(player);
+// 	// 		charExperience->pointAssign(numInput);
+// 	// 		Display::printNEWAttackStrength(player);
+// 	// 	}
+// 	// 	else {
+// 	// 		Display::printInvalidInput();
+// 	// 	}
+// 	// }
+// 	// else {
+// 	// 	//Just show how much needed for next level
+// 	// 	Display::printLevelcount(player);
+// 	// }
 
-	return 0;
-}
+// 	// //Give Coins for winning
+// 	// Coins* coins = new Coins(1,10);
+// 	// coins->addCoinsOnMONSERdeath(enemy->getHealth());
+// 	// player->setCoins(coins->getAmountCoins());
+// 	// Display::printCoins(player);
 
-// //User defeats Monster, 'shop' generates a random item that can be purchased by user
-// //Change Monster to whatever we call our created monster
-// if (Monster->getHealth() <= 0){
+// 	// Display::printNewline();
 
-// 	//Some display function outputting something like "You defeated monster"
+// 	// while (!player->isDead()) {
+// 		// Display::printBattleOptions();
+// 		// // Battle battle;
 
-// 	Item* randItem = nullptr;
-// 	randItem = randItem->generateRandomItem();
+// 		// switch (requestInput(option)) {
+// 		// 	case '1':
+// 		// 		// finish
+// 		// 		break;
+// 		// 	case '2':
+// 		// 		// finish
+// 		// 		break;
+// 		// 	case '3':
+// 		// 		// finish
+// 		// 		break;
 
-// 	if (randItem->getType() == "SWORD"){
-// 		Display::printShopGenerateSword();
-// 	}
-// 	else if (randItem->getType() == "DAGGER"){
-// 		Display::printShopGenerateDagger();
-// 	}
-// 	else if (randItem->getType() == "WAND"){
-// 		Display::printShopGenerateWand();
-// 	}
-// 	else if (randItem->getType() == "HEALTH_POTION"){
-// 		Display::printShopGenerateHealthPotion();
-// 	}
-// 	else{
-// 		Display::printShopGenerateAttackPotion();
-// 	}
+// 		// }
+// 	// }
 
-// 	//The print statements above ask the user if they would like to buy the item generated (Y/N)
-// 	//change user's choice char to whatever our input variable is called
-// 	std::cin >> x;
+// 	// Display::printCharacterInformation(player);
 
-// 	if (x == 'N'){
-// 		//Display output of new level or monster OR loops back into screen with Fight, Items, and Run
-// 		//Break statement here?
-// 	}
-// 	else if (x == 'Y'){
-// 		if (character->getCoins() >= randItem->getCost()){
-// 			character->addItem(randItem);
-// 			Display::printItemBuyPass();
-// 			character->setCoins(character->getCoins() - randItem->getCost());
-// 		}
-// 		else{
-// 			Display::printItemBuyFail();
-// 			//User did not have enough coins to buy item, go to next level/monster
-// 		}
-// 	}
+
+// 	// Display::printNewline();
+
+// 	//SHOW STATS THAT CHANGE MONSTER CLASS
+// 	// Display::printAttackStrengthMONSTER(enemy);
+// 	// Display::printHealthMONSTER(enemy);
+// 	// Display::printLevelMONSTER(enemy);
+
+// 	// Display::printInventoryItems(player);
+
+// 	delete player;
+// 	player = nullptr;
+
+// 	return 0;
 // }
 
-bool invalid123(const char& option) {
-	return (option != '1' && option != '2' && option != '3');
-}
+// // //User defeats Monster, 'shop' generates a random item that can be purchased by user
+// // //Change Monster to whatever we call our created monster
+// // if (Monster->getHealth() <= 0){
 
-bool invalidYN(const char& option) {
-	return (option != 'Y' && option != 'N');
-}
+// // 	//Some display function outputting something like "You defeated monster"
 
-bool invalidNWP(const char& option) {
-	return (option != 'N' && option != 'W' && option != 'P');
-}
+// // 	Item* randItem = nullptr;
+// // 	randItem = randItem->generateRandomItem();
 
-const char& getInput(char& option) {
-	do {
-        std::cin >> option;
-        if (invalid123(option) || invalidYN(option) || invalidNWP(option)) {
-            Display::printInvalidInput();
-        }
-    }
-	while (invalid123(option) || invalidYN(option) || invalidNWP(option));
-    return option;
-}
+// // 	if (randItem->getType() == "SWORD"){
+// // 		Display::printShopGenerateSword();
+// // 	}
+// // 	else if (randItem->getType() == "DAGGER"){
+// // 		Display::printShopGenerateDagger();
+// // 	}
+// // 	else if (randItem->getType() == "WAND"){
+// // 		Display::printShopGenerateWand();
+// // 	}
+// // 	else if (randItem->getType() == "HEALTH_POTION"){
+// // 		Display::printShopGenerateHealthPotion();
+// // 	}
+// // 	else{
+// // 		Display::printShopGenerateAttackPotion();
+// // 	}
+
+// // 	//The print statements above ask the user if they would like to buy the item generated (Y/N)
+// // 	//change user's choice char to whatever our input variable is called
+// // 	std::cin >> x;
+
+// // 	if (x == 'N'){
+// // 		//Display output of new level or monster OR loops back into screen with Fight, Items, and Run
+// // 		//Break statement here?
+// // 	}
+// // 	else if (x == 'Y'){
+// // 		if (character->getCoins() >= randItem->getCost()){
+// // 			character->addItem(randItem);
+// // 			Display::printItemBuyPass();
+// // 			character->setCoins(character->getCoins() - randItem->getCost());
+// // 		}
+// // 		else{
+// // 			Display::printItemBuyFail();
+// // 			//User did not have enough coins to buy item, go to next level/monster
+// // 		}
+// // 	}
+// // }
+
+// bool invalid123(const char& option) {
+// 	return (option != '1' && option != '2' && option != '3');
+// }
+
+// bool invalidYN(const char& option) {
+// 	return (option != 'Y' && option != 'N');
+// }
+
+// bool invalidNWP(const char& option) {
+// 	return (option != 'N' && option != 'W' && option != 'P');
+// }
+
+// const char& getInput(char& option) {
+// 	do {
+//         std::cin >> option;
+//         if (invalid123(option) || invalidYN(option) || invalidNWP(option)) {
+//             Display::printInvalidInput();
+//         }
+//     }
+// 	while (invalid123(option) || invalidYN(option) || invalidNWP(option));
+//     return option;
+// }
