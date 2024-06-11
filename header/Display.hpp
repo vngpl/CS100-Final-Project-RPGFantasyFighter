@@ -18,6 +18,13 @@ class Display {
 			std::cout << "SELECT AN OPTION: ";
 		}
 
+		static void printIntroAgain() {
+			std::cout << "1. Character Creation" << std::endl
+					  << "2. Settings" << std::endl
+					  << "3. Quit" << std::endl << std::endl;
+			std::cout << "SELECT AN OPTION: ";
+		}
+
 		static void printCharacterCreation() {
 			std::cout << "CHOOSE YOUR FIGHTER TYPE: " << std::endl << std::endl
 					  << "1. Assassin (+20 ATK, -10 HP)" << std::endl
@@ -38,8 +45,10 @@ class Display {
 		static void printQuit(Character* character) {
 			std::cout << "Thank you for playing!" << std::endl << std::endl;
 			if (character != nullptr) {
-				std::cout << "As a(n) " << character->getType() << " you finished with:" << std::endl;
-				printCharacterInformation(character);
+					std::cout << "As a(n) " << character->getType() << " you finished with:" << std::endl;
+					printCharacterInformation(character);
+			} else {
+					std::cout << "No character information available." << std::endl;
 			}
 		}
 
@@ -123,7 +132,7 @@ class Display {
 		}
 
 		static void printNewline() {
-			std::cout << std::endl;
+			std::cout << "================================" << std::endl;
 		}
 
 		static void printSelectOption() {
@@ -169,19 +178,23 @@ class Display {
 			}
 		}
 
-		static void printItemOptions(Character* character){
+		static bool printItemOptions(Character* character){
+			bool is_valid = true;
 			if (character->inventoryIsEmpty()) {
 				std::cout << "No item can be used." << std::endl;
+				is_valid = false;
 			}
 			else if (character->hasWeapon()) {
-        		std::cout << "Equip the weapon? Y/N" << std::endl;
+        		std::cout << "Equip the weapon? [Y:1]" << std::endl;
     		}
 			else if (character->hasPotion()) {
-				std::cout << "Apply the potion? Y/N" << std::endl;
+				std::cout << "Apply the potion? [Y:2]" << std::endl;
 			}
 			else {
 				std::cout << "Use weapon or potion? N/W/P" << std::endl;
+				is_valid = false;
 			}
+			return is_valid;
 		}
 
 		static void printUseSword(){
@@ -230,6 +243,10 @@ class Display {
 
 		static void printItemBuyPass(){
 			std::cout << "Item bought and added to inventory." << std::endl;
+		}
+
+		static void printGameOver() {
+			std::cout << "=== GAME OVER ===" << std::endl;
 		}
 };
 

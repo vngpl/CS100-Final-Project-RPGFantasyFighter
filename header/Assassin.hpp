@@ -5,7 +5,7 @@
 
 class Assassin : public Character {
     public:
-        Assassin();
+        Assassin() : Character(90, 120, 1, "ASSASSIN") {}
         void performSpecialAbility() override;
 };
 
