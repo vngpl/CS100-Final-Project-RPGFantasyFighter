@@ -5,7 +5,8 @@
 
 class Wizard : public Character {
    public:
-        Wizard() : Character(100, 100, 1, "WIZARD") { }
+        Wizard() : Character(100, 100, 1, "WIZARD") {}
+        void performSpecialAbility() override;
 };
 
 #endif

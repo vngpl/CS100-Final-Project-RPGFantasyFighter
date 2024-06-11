@@ -2,25 +2,26 @@
 #define __PLAYER_HPP__
 
 #include "Item.hpp"
-
-#include <string>
 #include <vector>
 
 class Character {
     private:
         int MAX_HEALTH;
         int health;
-        int level;
-        int coins;
-        int monstersSlain;
-        double experience;
         double attackStrength;
         std::string type;
+        int level;
+        double experience;
+        double nextExperience;
+        int monstersSlain;
+        int coins;
         std::vector<Item*> inventory;
 
     public:
         Character(int, double, int, const std::string&);
         virtual ~Character();
+
+        virtual void performSpecialAbility() = 0;
 
         int getHealth() const;
         int getMaxHealth() const;
