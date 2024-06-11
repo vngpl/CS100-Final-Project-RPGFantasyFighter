@@ -50,6 +50,7 @@ TEST(CharacterTest, inventoryIsEmpty){
 
 //Test for hasWeapon
 TEST(CharacterTest, hasWeapon){
+    Character* character;
     Wand wand; 
     character->addItem(wand);
     EXPECT_TRUE(character->hasWeapon());
@@ -57,6 +58,7 @@ TEST(CharacterTest, hasWeapon){
 
 //Test for hasPotion
 TEST(CharacterTest, hasPotion){
+    Character* character;
     HealthPotion potion; 
     character->addItem(potion);
     EXPECT_TRUE(character->hasPotion());
