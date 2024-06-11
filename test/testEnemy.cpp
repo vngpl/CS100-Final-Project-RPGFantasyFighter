@@ -27,7 +27,7 @@ TEST(EnemyTest, Setters) {
     EXPECT_EQ(enemy.getLevel(), 12);
 }
 
-TEST(EnemyTest, SetType) {
+TEST(EnemyTest, GetType) {
     Enemy enemy(100, 100, 1, "MONSTER");
     EXPECT_EQ(enemy.getType(), "MONSTER");
 }
