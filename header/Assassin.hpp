@@ -4,9 +4,9 @@
 #include "Character.hpp"
 
 class Assassin : public Character {
-    public:
-        Assassin() : Character(90, 120, 5, "ASSASSIN") {}
-        // void performSpecialAbility() override;
+ public:
+  Assassin() : Character(90, 120, 5, "ASSASSIN") {}
+  // void performSpecialAbility() override;
 };
 
 #endif

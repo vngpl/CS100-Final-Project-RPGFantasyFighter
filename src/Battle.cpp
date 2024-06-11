@@ -16,8 +16,9 @@ bool Battle::fight_impl(Character* attacker, Enemy* defender) {
   atk_strength = std::max<float>(1.0, atk_strength * atk_rate);
   int32_t def_health = defender->getHealth();
   int32_t new_health = def_health - static_cast<int32_t>(atk_strength);
-  defender->setHealth(static_cast<int32_t>(new_health));
-  if (new_health < 0) {
+  new_health = std::max<int32_t>(0, new_health);
+  defender->setHealth(new_health);
+  if (new_health <= 0) {
     return true;  // defender is dead
   }
   return false;
@@ -31,18 +32,19 @@ bool Battle::fight_impl(Enemy* attacker, Character* defender) {
   atk_strength = std::max<float>(1.0, atk_strength * atk_rate);
   int32_t def_health = defender->getHealth();
   int32_t new_health = def_health - static_cast<int32_t>(atk_strength);
+  new_health = std::max<int32_t>(0, new_health);
   defender->setHealth(new_health);
-  if (new_health < 0) {
+  if (new_health <= 0) {
     return true;  // defender is dead
   }
   return false;
 }
 
 // Return true if the player is dead
-bool Battle::fight(Character* player, Enemy* enemy, const std::string& option) {
+bool Battle::fight(Character* player, Enemy* enemy) {
   bool anyone_dead = false;
   bool flip = true;
-  while (anyone_dead) {
+  while (!anyone_dead) {
     if (flip) {
       anyone_dead = fight_impl(player, enemy);
     } else {
@@ -56,14 +58,13 @@ bool Battle::fight(Character* player, Enemy* enemy, const std::string& option) {
   return false;
 }
 
-void Battle::use_item(Character* player, const std::string& option) {
-  const int32_t itemIndex = std::stoi(option);
+void Battle::use_item(Character* player, int32_t itemIndex) {
   player->useItem(itemIndex);
 }
 
 float Battle::get_rate(int32_t level_a, int32_t level_b) {
   std::srand(std::time(nullptr));
-  float rate =
-      0.95 + static_cast<float>(std::rand()) / (static_cast<float>(RAND_MAX / (1.05 - 0.95)));
+  float rate = 0.95 + static_cast<float>(std::rand()) /
+                          (static_cast<float>(RAND_MAX / (1.05 - 0.95)));
   return rate;
 }

@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 #ifndef __DIFFICULT_H__
 #define __DIFFICULT_H__
 #include <utility>  // for std::pair

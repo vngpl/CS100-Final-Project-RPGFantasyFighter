@@ -1,6 +1,7 @@
 #include "../header/Character.hpp"
 
-Character::Character(int health, double attackStrength, int level, const std::string& type)
+Character::Character(int health, double attackStrength, int level,
+                     const std::string& type)
     : health(health),
       attackStrength(attackStrength),
       level(level),
@@ -37,7 +38,9 @@ int Character::getCoins() const {
 double Character::getExperience() const {
   return experience;
 }
-double Character::getNextExperience() const { return nextExperience; }  // NEW
+double Character::getNextExperience() const {
+  return nextExperience;
+}  // NEW
 double Character::getAttackStrength() const {
   return attackStrength;
 }
@@ -60,8 +63,9 @@ void Character::setCoins(int newCoins) {
 void Character::setExperience(double newExperience) {
   experience = newExperience;
 }
-void Character::setNextExperience(
-    double newNextExperience) { nextExperience = newNextExperience; }  // NEW
+void Character::setNextExperience(double newNextExperience) {
+  nextExperience = newNextExperience;
+}  // NEW
 void Character::setLevel(int newLevel) {
   level = newLevel;
 }
@@ -83,7 +87,8 @@ bool Character::isDead() const {
 }
 
 void Character::addItem(Item* item) {
-  if (item->getType() == "SWORD" || item->getType() == "DAGGER" || item->getType() == "WAND") {
+  if (item->getType() == "SWORD" || item->getType() == "DAGGER" ||
+      item->getType() == "WAND") {
     inventory.at(0) = item;
   } else {
     inventory.at(1) = item;
@@ -94,7 +99,8 @@ void Character::useItem(int itemIndex) {
   Item* itemToUse = inventory.at(itemIndex);
 
   if (itemToUse == nullptr) {
-    std::cerr << "Error: ITEM NOT FOUND IN INVENTORY AT INDEX " << itemIndex << std::endl;
+    std::cerr << "Error: ITEM NOT FOUND IN INVENTORY AT INDEX " << itemIndex
+              << std::endl;
     return;
   }
 
@@ -103,9 +109,11 @@ void Character::useItem(int itemIndex) {
   if ((itemToUse->getType() == "SWORD" && getType() == "WARRIOR") ||
       (itemToUse->getType() == "DAGGER" && getType() == "ASSASSIN") ||
       (itemToUse->getType() == "WAND" && getType() == "WIZARD")) {
-    newAttributeValue = getAttackStrength() + static_cast<double>(itemToUse->getStrength()) + 15;
+    newAttributeValue = getAttackStrength() +
+                        static_cast<double>(itemToUse->getStrength()) + 15;
   } else {
-    newAttributeValue = getAttackStrength() + static_cast<double>(itemToUse->getStrength());
+    newAttributeValue =
+        getAttackStrength() + static_cast<double>(itemToUse->getStrength());
   }
 
   if (itemIndex == 0) {

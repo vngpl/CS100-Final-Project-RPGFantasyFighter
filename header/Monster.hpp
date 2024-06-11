@@ -4,8 +4,8 @@
 #include "Enemy.hpp"
 
 class Monster : public Enemy {
-   public:
-        Monster();
+ public:
+  Monster();
 };
 
 #endif
