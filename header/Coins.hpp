@@ -14,8 +14,8 @@ class Coins {
         int amountCoins;
         int minCoins;
         int maxCoins;
-        Character* character;
-        Enemy* enemy;
+        // Character* character;
+        // Enemy* enemy;
     public:
         // CONSTRUCTOR TO INITIALIZE THE COIN AMOUNT TO 0
         Coins () {}

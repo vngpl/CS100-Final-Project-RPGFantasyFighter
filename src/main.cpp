@@ -122,6 +122,7 @@ int main() {
             }
           case 3:
             /* run */
+						is_valid = true;
             break;
           default:
             assert(0);

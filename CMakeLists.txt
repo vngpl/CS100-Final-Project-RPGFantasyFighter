@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.20)
 
 project(final_project)
 
@@ -21,18 +21,18 @@ add_executable(final_proj ${SOURCES} header/Display.hpp)
 
 # add_executable(final_proj ${SOURCES})
 
-add_executable(final_proj
-    src/main.cpp
-    src/Character.cpp
-    src/Assassin.cpp
-    src/Warrior.cpp
-    src/Wizard.cpp
-    src/Enemy.cpp
-    src/Monster.cpp
-    src/Item.cpp
-    src/Battle.cpp
-    header/Display.hpp
-    src/Diffi.cpp
-)
+# add_executable(final_proj
+#     src/main.cpp
+#     src/Character.cpp
+#     src/Assassin.cpp
+#     src/Warrior.cpp
+#     src/Wizard.cpp
+#     src/Enemy.cpp
+#     src/Monster.cpp
+#     src/Item.cpp
+#     src/Battle.cpp
+#     header/Display.hpp
+#     src/Diffi.cpp
+# )
 
 target_compile_options(final_proj PRIVATE -Wall -Wuninitialized -Werror)

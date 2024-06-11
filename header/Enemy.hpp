@@ -6,9 +6,9 @@
 class Enemy {
  private:
   int health;
-  int level;
   double attackStrength;
   std::string type;
+  int level;
 
  public:
   Enemy();
