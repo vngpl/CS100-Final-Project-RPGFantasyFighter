@@ -115,7 +115,7 @@ class Display {
     printMultiLineBox(lines);
   }
 
-  static void inline printStatAllocation(Character* character) {
+  static void inline printStatAllocation() {
     std::vector<std::string> lines = {
         "CHOOSE STAT ALLOCATION:", "", "1. Upgrade Health",
         "2. Upgrade Strength",     "", "SELECT AN OPTION: "};
@@ -193,7 +193,7 @@ class Display {
     printBox(ss.str());
   }
 
-  static void inline printDeath(Character* character) {
+  static void inline printDeath() {
     printBox("YOU HAVE DIED.");
   }
 
@@ -213,7 +213,7 @@ class Display {
     printMultiLineBox(lines);
   }
 
-  static void inline printInventoryIsEmpty(Character* character) {
+  static void inline printInventoryIsEmpty() {
     printBox("INVENTORY IS EMPTY.");
   }
 
