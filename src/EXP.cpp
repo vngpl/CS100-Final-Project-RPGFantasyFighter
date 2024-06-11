@@ -22,7 +22,7 @@ Experience::Experience(int level, double exp, Character* character,
 
 Experience::Experience() {}
 
-Experience::~Experience() { delete character; }
+// Experience::~Experience() { delete character; }
 
 double Experience::getEXP() {
   return exp;
