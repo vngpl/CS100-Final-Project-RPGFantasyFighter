@@ -59,9 +59,8 @@ Solid Design Principles:
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history.
 
 ## Screenshots
-> Screenshots of the input/output after running your application
 ![Difficulty Select](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Difficulty.png)
-> 
+
 ![Character Class Select](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Character.png)
 
 ![Battle](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Battle.png)
