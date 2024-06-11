@@ -14,12 +14,12 @@ The features that the project will provide includes character customization and 
 ## User Interface Specification
 
 ### Navigation Diagram
-![Navigation Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Navigation%20Diagram.png)
+![Navigation Diagram](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/NavigationDiagram.png)
 
 Diagram illustrating how the user can navigate from one screen to another. The diagram represents the different screens the user will move between and includes confirmations, buttons, and viewing for switching to the next screen.
 
 ### Screen Layouts
-[General Screen Layout](https://docs.google.com/presentation/d/1J9MkQOFKmCZuKEjlQRDTo65_aweelnR4qWAHOjOCGjk/edit?usp=sharing)
+[General Screen Layout](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/ClassDiagram.png)
 
 The general layout will consist of prompts displayed in the game window. The user will be able to act based on the options provided by each prompt. Input may mainly be in the form of clickable buttons, however, numerical and text inputs may also be used to allow for communication with/between the user and the game environment. The user will be able to provide feedback based on the options that are chosen. The layout outlines some general features of the game such as character creation/customization, the combat system, leveling system, and interactions with objects in the game.
 
