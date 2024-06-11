@@ -3,9 +3,9 @@
 Character::Character(int health, double attackStrength, int level, const std::string& type)
     : health(health),
       attackStrength(attackStrength),
+      level(level),
       type(type),
       MAX_HEALTH(health),
-      level(1),
       experience(0.0),
       monstersSlain(0),
       coins(0),
@@ -37,7 +37,7 @@ int Character::getCoins() const {
 double Character::getExperience() const {
   return experience;
 }
-double Character::getNextExperience() const { /*return nextExperience;*/ }  // NEW
+double Character::getNextExperience() const { return nextExperience; }  // NEW
 double Character::getAttackStrength() const {
   return attackStrength;
 }
@@ -61,7 +61,7 @@ void Character::setExperience(double newExperience) {
   experience = newExperience;
 }
 void Character::setNextExperience(
-    double newNextExperience) { /*nextExperience = newNextExperience;*/ }  // NEW
+    double newNextExperience) { nextExperience = newNextExperience; }  // NEW
 void Character::setAttackStrength(double newAttackStrength) {
   attackStrength = newAttackStrength;
 }

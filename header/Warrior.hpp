@@ -6,7 +6,7 @@
 class Warrior : public Character {
    public:
         Warrior() : Character(125, 100, 1, "WARRIOR") {}
-        void performSpecialAbility() override;
+        // void performSpecialAbility() override;
 };
 
 #endif

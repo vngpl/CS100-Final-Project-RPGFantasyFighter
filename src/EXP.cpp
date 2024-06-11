@@ -16,7 +16,7 @@ Experience::Experience(int level, double exp, Character* character, Enemy* enemy
   healthXP = character->getMaxHealth();
   strengthXP = character->getAttackStrength();
   healthMonster = enemy->getHealth();
-  character = character;
+  this->character = character;
 }
 
 double Experience::getEXP() {
