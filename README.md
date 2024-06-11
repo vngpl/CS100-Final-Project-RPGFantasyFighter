@@ -19,6 +19,17 @@ The features that the project will provide includes character customization and 
 Diagram illustrating how the user can navigate from one screen to another. The diagram represents the different screens the user will move between and includes confirmations, buttons, and viewing for switching to the next screen.
 
 ### Screen Layouts
+
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/a5acbbd7-70c7-4005-8ab0-592412bc8dad)
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/2b8f03ce-e6f2-4224-be25-76cbd9713a13)
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/9e58ef1c-1ebe-4e69-abf8-31752cdf8d1a)
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/603494f2-abcb-4b0c-9108-e518bb10da11)
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/85bd858c-2c0d-433c-b6d8-125a02472c6d)
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/bf394d5c-2ed3-4d6c-8e69-0b824df3099c)
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/e83672ff-d13c-44a3-8ad7-11bc4a5a38d2)
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/940d5e60-6c15-496c-8cf5-502d2b721fd5)
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/fdc3aa03-bb9c-4a16-91db-e2d8a22ed8f3)
+
 [General Screen Layout](https://docs.google.com/presentation/d/1J9MkQOFKmCZuKEjlQRDTo65_aweelnR4qWAHOjOCGjk/edit#slide=id.p)
 
 The general layout will consist of prompts displayed in the game window. The user will be able to act based on the options provided by each prompt. Input may mainly be in the form of clickable buttons, however, numerical and text inputs may also be used to allow for communication with/between the user and the game environment. The user will be able to provide feedback based on the options that are chosen. The layout outlines some general features of the game such as character creation/customization, the combat system, leveling system, and interactions with objects in the game.
