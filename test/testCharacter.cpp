@@ -1,3 +1,6 @@
+#include <gtest/gtest.h>
+#include "../header/Character.hpp"
+
 TEST(CharacterTest, HealthTest) {
     Character testCharacter(50, 100, "TEST CHARACTER");
     EXPECT_EQ(testCharacter.getHealth(), 50);
@@ -18,7 +21,7 @@ TEST(CharacterTest, AddItemTest) {
     EXPECT_TRUE(itemExists);
 }
 
-TEST_F(CharacterTest, UpdateMonsterSlainCountTest) {
+TEST(CharacterTest, UpdateMonsterSlainCountTest) {
     Character testCharacter(100, 100, "TEST CHARACTER");
     character.updateMonsterSlainCount();
     EXPECT_EQ(character.getMonstersSlain(), 1);
