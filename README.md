@@ -45,5 +45,6 @@ Solid Design Principles:
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
+ The project was tested/validated using unit testing via the Google Test (gtest) submodule. Tests for each class were written to ensure that the methods were functioning properly for the class but also when integrating the methods into the main game. Once the tests were written, they were compiled using the CMakeLists.txt and used for debugging the code and testing the program's logic.
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
 
