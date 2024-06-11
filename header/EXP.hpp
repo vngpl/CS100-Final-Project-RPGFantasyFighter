@@ -25,9 +25,7 @@ class Experience {
         // Enemy* enemy;
 
     public:
-        bool updateLevel();
-        // static double gainExperience(double,int);
-        double gainExperience();
+        bool updateLevel();        double gainExperience();
         void pointAssign(int);
 
         Experience() {} // Default constructor

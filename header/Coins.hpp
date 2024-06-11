@@ -14,12 +14,13 @@ class Coins {
         int amountCoins;
         int minCoins;
         int maxCoins;
-        // Character* character;
+        Character* character;
         // Enemy* enemy;
     public:
         // CONSTRUCTOR TO INITIALIZE THE COIN AMOUNT TO 0
         Coins () {}
-        Coins(int minCoins = 1, int maxCoins = 10); //Character* character
+        ~Coins () {}
+        Coins(int minCoins, int maxCoins, Character*);
 
         // WHEN MONSTER DIES RANDOM 3-10 COINS WILL BE ADDED
         void addCoinsOnMONSERdeath(int);

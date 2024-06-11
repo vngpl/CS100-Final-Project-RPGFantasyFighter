@@ -188,6 +188,7 @@ int main() {
               break;
             }
           default:
+            is_valid = true;
             break;
         }
       } else {
@@ -196,7 +197,7 @@ int main() {
       }
 
       // Give Coins for winning
-      Coins* coins = new Coins(1, 10);
+      Coins* coins = new Coins(1, 10, player);
       coins->addCoinsOnMONSERdeath(enemy->getHealth());
       player->setCoins(coins->getAmountCoins());
       Display::printCoins(player);
