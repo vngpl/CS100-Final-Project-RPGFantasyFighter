@@ -45,4 +45,5 @@ void Difficulty::setHard() {
 
 void Difficulty::setEnemies(const std::vector<Enemy*>& enemies) {
   allEnemies = std::move(enemies);
+  // TODO: Set difficulties
 }

@@ -32,14 +32,14 @@ bool Battle::fight_impl(Enemy* attacker, Character* defender) {
   int32_t def_health = defender->getHealth();
   int32_t new_health = def_health - static_cast<int32_t>(atk_strength);
   defender->setHealth(new_health);
-  if (new_health < 0) {
+  if (new_health <= 0) {
     return true;  // defender is dead
   }
   return false;
 }
 
 // Return true if the player is dead
-bool Battle::fight(Character* player, Enemy* enemy, const std::string& option) {
+bool Battle::fight(Character* player, Enemy* enemy) {
   bool anyone_dead = false;
   bool flip = true;
   while (anyone_dead) {
@@ -56,8 +56,7 @@ bool Battle::fight(Character* player, Enemy* enemy, const std::string& option) {
   return false;
 }
 
-void Battle::use_item(Character* player, const std::string& option) {
-  const int32_t itemIndex = std::stoi(option);
+void Battle::use_item(Character* player, int32_t itemIndex) {
   player->useItem(itemIndex);
 }
 

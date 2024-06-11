@@ -19,8 +19,8 @@ class Battle {
   Battle();
   ~Battle();
 
-  bool fight(Character* player, Enemy* enemies, const std::string& option);
-  void use_item(Character* player, const std::string& option);
+  bool fight(Character* player, Enemy* enemies);
+  void use_item(Character* player, int32_t itemIndex);
 
   static float get_rate(int32_t level_a, int32_t level_b);
 };
