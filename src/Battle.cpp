@@ -38,63 +38,27 @@ bool Battle::fight_impl(Enemy* attacker, Character* defender) {
   return false;
 }
 
-bool Battle::fight(Character* player, const std::vector<Enemy*>& enemies) {
-  bool quit = false;
-  for (const auto& enemy : enemies) {
-    Display::printBattleOptions();
-    switch (option) {
-      case 1:
-        /* fight */
-        {
-          bool anyone_dead = false;
-          bool flip = true;
-          while (anyone_dead) {
-            if (flip) {
-              anyone_dead = fight_impl(player, enemy);
-            } else {
-              anyone_dead = fight_impl(enemy, player);
-              if (anyone_dead) {
-                quit = true;
-              }
-            }
-            flip = !flip;  // role switching
-          }
-        }
-        break;
-      case 2:
-        /* use items */
-        {
-          Display::printItemOptions(player);
-          player->useItem(itemIntex);
-        }
-        break;
-      case 3:
-        /* run */
-        quit = true;
-        break;
-      default:
-        break;
+// Return true if the player is dead
+bool Battle::fight(Character* player, Enemy* enemy, const std::string& option) {
+  bool anyone_dead = false;
+  bool flip = true;
+  while (anyone_dead) {
+    if (flip) {
+      anyone_dead = fight_impl(player, enemy);
+    } else {
+      anyone_dead = fight_impl(enemy, player);
+      if (anyone_dead) {
+        return true;
+      }
     }
-    if (quit) {
-      break;  // leave the battle
-    }
+    flip = !flip;  // role switching
   }
+  return false;
 }
 
-// int32_t Battle::get_option() const {
-//   return option;
-// }
-
-// int32_t Battle::get_item() const {
-//   return itemIndex;
-// }
-
-void Battle::set_option(int32_t op) {
-  option = op;
-}
-
-void Battle::set_item(int32_t op) {
-  itemIntex = op;
+void Battle::use_item(Character* player, const std::string& option) {
+  const int32_t itemIndex = std::stoi(option);
+  player->useItem(itemIndex);
 }
 
 float Battle::get_rate(int32_t level_a, int32_t level_b) {

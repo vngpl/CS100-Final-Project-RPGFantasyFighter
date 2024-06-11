@@ -12,8 +12,6 @@
 
 class Battle {
  private:
-  int32_t option;
-  int32_t itemIntex;
   bool fight_impl(Character* attacker, Enemy* defender);
   bool fight_impl(Enemy* attacker, Character* defender);
 
@@ -21,15 +19,8 @@ class Battle {
   Battle();
   ~Battle();
 
-  bool fight(Character* player, const std::vector<Enemy*>& enemies);
-
-  // getters
-  // int32_t get_option() const;
-  // int32_t get_item() const;
-
-  // setters
-  void set_option(int32_t op);
-  void set_item(int32_t op);
+  bool fight(Character* player, Enemy* enemies, const std::string& option);
+  void use_item(Character* player, const std::string& option);
 
   static float get_rate(int32_t level_a, int32_t level_b);
 };

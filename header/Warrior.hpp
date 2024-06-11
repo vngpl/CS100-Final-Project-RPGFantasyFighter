@@ -5,7 +5,7 @@
 
 class Warrior : public Character {
    public:
-        Warrior();
+        Warrior() : Character(125, 100, 1, "WARRIOR") { }
 };
 
 #endif

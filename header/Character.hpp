@@ -19,7 +19,7 @@ class Character {
         std::vector<Item*> inventory;
 
     public:
-        Character(int, double, const std::string&);
+        Character(int, double, int, const std::string&);
         virtual ~Character();
 
         int getHealth() const;
