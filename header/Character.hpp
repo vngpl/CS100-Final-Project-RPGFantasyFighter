@@ -38,6 +38,7 @@ class Character {
         void setHealth(int);
         void setExperience(double);
         void setNextExperience(double); ///NEW
+        void setLevel(int);
         void updateMonsterSlainCount();
         void setAttackStrength(double);
 
