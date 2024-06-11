@@ -1,6 +1,5 @@
 # RPG Fantasy Fighter
-
- > Authors: [Ryan Nguyen](https://github.com/ryanxnguy), [Vansh Nagpal](https://github.com/vngpl), [Jingbo Su](https://github.com/sujingbo0217), [Nicholas Castellanos](https://github.com/Hugzaregood)
+Authors: [Ryan Nguyen](https://github.com/ryanxnguy), [Vansh Nagpal](https://github.com/vngpl), [Jingbo Su](https://github.com/sujingbo0217), [Nicholas Castellanos](https://github.com/Hugzaregood)
 
 ## Project Description
 This project is interesting to us because it will give us a chance to be creative in developing a video game. It will also help improve our programming skills by better understanding topics such as object-oriented programming, input/output verification, and debugging/testing.
@@ -51,9 +50,7 @@ Solid Design Principles:
 2. Liskov Substitution: The subclasses of the item class, for example, behave similarly to their parent class. They will have the same functions as the parent class, such as getName.
 3. Interface Segregation: The subclasses of the character class, for example, do not have unnecessary functions that would not fit with their respective class. Each subclass has its own attack, which will do a unique amount of damage and display its own message. 
 
-## Final deliverable
-
-### Screenshots
+## Screenshots
 ![Difficulty Select](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Difficulty.png)
 
 ![Character Class Select](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Character.png)
@@ -72,7 +69,7 @@ Solid Design Principles:
 
 ![EndStats](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/EndStats.png)
 
-### Installation/Usage
+## Installation/Usage
 Instructions on installing and running your application: 
 
 1. Clone this repository onto your local machine using the 'git clone' command in your terminal with the HTTPS link.
@@ -80,7 +77,7 @@ Instructions on installing and running your application:
 3. Finally, type the command 'sh run.sh' into the terminal, while in the directory, to compile and run the program for you.
 4. Enjoy! 
 
-### Testing
+## Testing
 The project was tested/validated using unit testing via the Google Test (gtest) submodule. Tests for each class were written to ensure that the methods were functioning properly for the class but also when integrating the methods into the main game. Once the tests were written, they were compiled using the CMakeLists.txt and used for debugging the code and testing the program's logic.
 
 Additionally, the program was tested using Valgrind to detect memory leaks when allocating and deallocating memory for objects used in the game. The program was tested until it was memcheck clean:
