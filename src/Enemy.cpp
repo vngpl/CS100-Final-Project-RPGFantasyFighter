@@ -1,10 +1,13 @@
 #include "../header/Enemy.hpp"
 
-Enemy::Enemy()
-    : health(100), attackStrength(50), type("Normal"), level(5) {}
+Enemy::Enemy() : health(100), attackStrength(50), type("Normal"), level(5) {}
 
-Enemy::Enemy(int health, double attackStrength, int level, const std::string& type)
-    : health(health), attackStrength(attackStrength), type(type), level(level) {}
+Enemy::Enemy(int health, double attackStrength, int level,
+             const std::string& type)
+    : health(health),
+      attackStrength(attackStrength),
+      type(type),
+      level(level) {}
 
 int Enemy::getHealth() const {
   return health;

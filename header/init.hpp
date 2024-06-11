@@ -10,5 +10,6 @@
 #include "Monster.hpp"
 #include "Warrior.hpp"
 #include "Wizard.hpp"
+#include "utils.hpp"
 
 #endif

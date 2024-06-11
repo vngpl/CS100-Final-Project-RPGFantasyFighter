@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+// using namespace std;
 
 // #include "../header/Character.hpp"
 #include "../header/Diffi.hpp"

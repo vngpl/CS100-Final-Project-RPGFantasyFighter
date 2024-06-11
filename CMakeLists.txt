@@ -14,7 +14,7 @@ include_directories(header)
 file(GLOB SOURCES "src/*.cpp")
 
 # Exclude from the SOURCES list
-list(FILTER SOURCES EXCLUDE REGEX "src/tests.cpp")
+# list(FILTER SOURCES EXCLUDE REGEX "src/tests.cpp")
 
 # Add executable for the project
 add_executable(final_proj ${SOURCES} header/Display.hpp)

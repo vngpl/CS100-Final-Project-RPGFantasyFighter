@@ -4,9 +4,9 @@
 #include "Character.hpp"
 
 class Warrior : public Character {
-   public:
-        Warrior() : Character(125, 100, 5, "WARRIOR") {}
-        // void performSpecialAbility() override;
+ public:
+  Warrior() : Character(125, 100, 5, "WARRIOR") {}
+  // void performSpecialAbility() override;
 };
 
 #endif
