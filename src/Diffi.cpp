@@ -1,17 +1,14 @@
+#include "../header/Diffi.hpp"
+
+#include <cassert>
 #include <iostream>
 #include <string>
 
-// using namespace std;
-
-// #include "../header/Character.hpp"
-#include "../header/Diffi.hpp"
 #include "../header/Enemy.hpp"
-
-// std::vector<Enemy*> Difficulty::allEnemies;
 
 Difficulty::Difficulty() : diffi_level(-1) {}
 
-Difficulty::~Difficulty() { 
+Difficulty::~Difficulty() {
   for (auto& enemy : allEnemies) {
     delete enemy;
   }
@@ -52,5 +49,19 @@ void Difficulty::setHard() {
 
 void Difficulty::setEnemies(const std::vector<Enemy*>& enemies) {
   allEnemies = std::move(enemies);
-  // TODO: Set difficulties
+  switch (diffi_level) {
+    case 1:
+      setEasy();
+      break;
+    case 2:
+      /* code */
+      break;
+    case 3:
+      setHard();
+      break;
+
+    default:
+      assert(0);
+      break;
+  }
 }

@@ -11,6 +11,7 @@ class Coins {
   int amountCoins;
   int minCoins;
   int maxCoins;
+
  public:
   // CONSTRUCTOR TO INITIALIZE THE COIN AMOUNT TO 0
   Coins() {}
