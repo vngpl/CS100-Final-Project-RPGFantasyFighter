@@ -6,11 +6,11 @@
 
 class Character {
     private:
-        int MAX_HEALTH;
         int health;
         double attackStrength;
-        std::string type;
         int level;
+        std::string type;
+        int MAX_HEALTH;
         double experience;
         double nextExperience;
         int monstersSlain;
@@ -18,10 +18,10 @@ class Character {
         std::vector<Item*> inventory;
 
     public:
-        Character(int, double, const std::string&);
+        Character(int, double, int, const std::string&);
         virtual ~Character();
 
-        virtual void performSpecialAbility() = 0;
+        // virtual void performSpecialAbility() = 0;
 
         int getHealth() const;
         int getMaxHealth() const;

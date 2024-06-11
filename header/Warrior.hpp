@@ -5,8 +5,8 @@
 
 class Warrior : public Character {
    public:
-        Warrior();
-        void performSpecialAbility() override;
+        Warrior() : Character(125, 100, 1, "WARRIOR") {}
+        // void performSpecialAbility() override;
 };
 
 #endif
