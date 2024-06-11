@@ -1,7 +1,7 @@
 #include "../header/Character.hpp"
 
 Character::Character(int health, double attackStrength, const std::string& type)
-    : health(health), attackStrength(attackStrength), type(type), MAX_HEALTH(health), level(5), experience(0.0), monstersSlain(0), coins(0), inventory(2, nullptr) { }
+    : MAX_HEALTH(health), health(health), attackStrength(attackStrength), type(type), level(5), experience(0.0), nextExperience(0.0), monstersSlain(0), coins(0), inventory(2, nullptr) { }
 
 Character::~Character() {
     for (Item*& item : inventory) {
@@ -26,7 +26,7 @@ void Character::setHealth(int newHealth) { health = newHealth; }
 void Character::updateMonsterSlainCount() { monstersSlain++; }
 void Character::setCoins(int newCoins) { coins = newCoins; }
 void Character::setExperience(double newExperience) { experience = newExperience; }
-void Character::setNextExperience(double newNextExperience) {nextExperience = newNextExperience; } //NEW
+void Character::setNextExperience(double newNextExperience) { nextExperience = newNextExperience; } //NEW
 void Character::setAttackStrength(double newAttackStrength) { attackStrength = newAttackStrength; }
 
 bool Character::inventoryIsEmpty() const { return (inventory.at(0) == nullptr && inventory.at(1) == nullptr); }

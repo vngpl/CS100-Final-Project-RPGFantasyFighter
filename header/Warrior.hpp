@@ -6,6 +6,7 @@
 class Warrior : public Character {
    public:
         Warrior();
+        void performSpecialAbility() override;
 };
 
 #endif

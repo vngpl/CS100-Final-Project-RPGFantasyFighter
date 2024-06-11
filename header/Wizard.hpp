@@ -6,6 +6,7 @@
 class Wizard : public Character {
    public:
         Wizard();
+        void performSpecialAbility() override;
 };
 
 #endif
