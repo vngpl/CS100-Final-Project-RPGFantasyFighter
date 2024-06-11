@@ -43,18 +43,22 @@ Solid Design Principles:
 2. Liskov Substitution: The subclasses of the item class, for example, behave similarly to their parent class. They will have the same functions as the parent class, such as getName.
 3. Interface Segregation: The subclasses of the character class, for example, do not have unnecessary functions that would not fit with their respective class. Each subclass has its own attack, which will do a unique amount of damage and display its own message. 
 
-
- > ## Final deliverable
+## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members.
  > Before the demo, you should do the following:
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history.
 
- ## Screenshots
- > Screenshots of the input/output after running your application
- ## Installation/Usage
+## Screenshots
+> Screenshots of the input/output after running your application
+## Installation/Usage
  > Instructions on installing and running your application
- ## Testing
- The project was tested/validated using unit testing via the Google Test (gtest) submodule. Tests for each class were written to ensure that the methods were functioning properly for the class but also when integrating the methods into the main game. Once the tests were written, they were compiled using the CMakeLists.txt and used for debugging the code and testing the program's logic.
+## Testing
+The project was tested/validated using unit testing via the Google Test (gtest) submodule. Tests for each class were written to ensure that the methods were functioning properly for the class but also when integrating the methods into the main game. Once the tests were written, they were compiled using the CMakeLists.txt and used for debugging the code and testing the program's logic.
+
+Additionally, the program was tested using Valgrind to detect memory leaks when allocating and deallocating memory for objects used in the game. The program was tested until it was memcheck clean:
+
+![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/fec6a9da-5b4e-45a3-b3ca-16cf7db5d46e)
+
 
