@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-// using namespace std;
+using namespace std;
 #include "../header/Character.hpp"
 #include "../header/EXP.hpp"
 #include "../header/Enemy.hpp"
@@ -101,8 +101,8 @@ bool Experience::updateLevel() {
 //     }
 // }
 
-double Experience::gainExperience() {
-  if (healthMonster <= 0) {
+double Experience::gainExperience(int monsterHealth) {
+  if (monsterHealth <= 0) {
     exp += ((4.0 * pow(levelMonster, 3.0)) /
             5.0);  // Make the level gained by the monster
     // experience += ((4.0 * pow(levelMONSTER, 3)) / 5);

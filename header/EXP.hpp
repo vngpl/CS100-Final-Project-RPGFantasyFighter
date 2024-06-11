@@ -26,7 +26,7 @@ class Experience {
 
  public:
   bool updateLevel();
-  double gainExperience();
+  double gainExperience(int);
   void pointAssign(int);
 
   Experience();  // Default constructor
