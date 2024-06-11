@@ -52,8 +52,20 @@ Solid Design Principles:
 
 ## Screenshots
 > Screenshots of the input/output after running your application
+![Difficulty Select](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Difficulty.png)
+![Character Class Select](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Character.png)
+![Battle](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Battle.png)
+![Battle Victory](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/BattleVictory.png)
+![LevelUp](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/LevelUp.png)
+![Shop](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Shop.png)
+![Inventory](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Inventory.png)
+![Run](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Run.png)
+![EndStats](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/EndStats.png)
+
 ## Installation/Usage
  > Instructions on installing and running your application
+To install the program, you can create a new folder or directory in your IDE. Then you can copy all of the files in this repository into your newly created folder. Open the terminal and CD into your folder that contains the program files. Finally, because we have a file that compiles and runs the program for you, all you need to do is type sh run.sh. Enjoy! 
+
 ## Testing
 The project was tested/validated using unit testing via the Google Test (gtest) submodule. Tests for each class were written to ensure that the methods were functioning properly for the class but also when integrating the methods into the main game. Once the tests were written, they were compiled using the CMakeLists.txt and used for debugging the code and testing the program's logic.
 
