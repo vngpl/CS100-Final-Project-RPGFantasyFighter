@@ -29,7 +29,8 @@ class Experience {
   double gainExperience();
   void pointAssign(int);
 
-  Experience() {}  // Default constructor
+  Experience();  // Default constructor
+  ~Experience();
   Experience(int, double, Character*, Enemy*);
   double getNextEXP();
   double getEXP();

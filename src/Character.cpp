@@ -13,11 +13,13 @@ Character::Character(int health, double attackStrength, int level,
       inventory(2, nullptr) {}
 
 Character::~Character() {
-  for (Item*& item : inventory) {
-    delete item;
-    item = nullptr;
-  }
-  inventory.clear();
+  // for (Item*& item : inventory) {
+  //   delete item;
+  //   item = nullptr;
+  // }
+  // inventory.clear();
+  delete inventory.at(0);
+  delete inventory.at(1);
 }
 
 int Character::getHealth() const {

@@ -11,6 +11,13 @@
 
 Difficulty::Difficulty() : diffi_level(-1) {}
 
+Difficulty::~Difficulty() { 
+  for (auto& enemy : allEnemies) {
+    delete enemy;
+  }
+  allEnemies.clear();
+}
+
 void Difficulty::setLevel(int32_t level) {
   diffi_level = level;
 }

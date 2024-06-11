@@ -6,6 +6,9 @@
 int main() {
   // player
   Character* player = nullptr;
+  Experience* charExperience = nullptr;
+  Coins* coins = nullptr;
+
 
   // enemy list
   std::vector<Enemy*> enemies;
@@ -74,6 +77,10 @@ int main() {
               bool player_dead = battle.fight(player, enemy);
               if (player_dead) {
                 Display::printGameOver();
+                delete player;
+                // for (auto& e : enemies) {
+                //   delete e;
+                // }
                 return 0;
               } else {
                 Display::printWinning();
@@ -164,7 +171,7 @@ int main() {
       }
 
       // Give EXP for winning
-      Experience* charExperience = new Experience(
+      charExperience = new Experience(
           player->getLevel(), player->getExperience(), player, enemy);
       player->setExperience(charExperience->gainExperience());
       player->setNextExperience(charExperience->getNextEXP());
@@ -206,7 +213,7 @@ int main() {
       }
 
       // Give Coins for winning
-      Coins* coins = new Coins(1, 10, player);
+      coins = new Coins(1, 10, player);
       coins->addCoinsOnMONSERdeath(enemy->getHealth());
       player->setCoins(coins->getAmountCoins());
       Display::printCoins(player);
@@ -234,6 +241,7 @@ int main() {
         }
         switch (getInputYN()) {
           case 'N':
+          delete randItem;
             break;
           case 'Y':
             if (player->getCoins() >= randItem->getCost()) {
@@ -253,14 +261,16 @@ int main() {
 
       Display::printInventoryItems(player);
     }
-    enemies.clear();
   }
 
   // Free
   delete player;
+  delete coins;
+  delete charExperience;
   for (auto& enemy : enemies) {
     delete enemy;
   }
+  enemies.clear();
   // delete enemy;
   // delete monster;
 

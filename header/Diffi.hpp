@@ -16,6 +16,7 @@ class Difficulty {
 
  public:
   Difficulty();
+  ~Difficulty();
   void setLevel(int32_t);
   bool levelSettled() const;
   void setEasy();

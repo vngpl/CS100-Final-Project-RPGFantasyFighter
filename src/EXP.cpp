@@ -20,6 +20,10 @@ Experience::Experience(int level, double exp, Character* character,
   this->character = character;
 }
 
+Experience::Experience() {}
+
+Experience::~Experience() { delete character; }
+
 double Experience::getEXP() {
   return exp;
 }
