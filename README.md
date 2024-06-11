@@ -21,13 +21,21 @@ Diagram illustrating how the user can navigate from one screen to another. The d
 ### Screen Layouts
 
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/a5acbbd7-70c7-4005-8ab0-592412bc8dad)
+
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/2b8f03ce-e6f2-4224-be25-76cbd9713a13)
+
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/9e58ef1c-1ebe-4e69-abf8-31752cdf8d1a)
+
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/603494f2-abcb-4b0c-9108-e518bb10da11)
+
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/85bd858c-2c0d-433c-b6d8-125a02472c6d)
+
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/bf394d5c-2ed3-4d6c-8e69-0b824df3099c)
+
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/e83672ff-d13c-44a3-8ad7-11bc4a5a38d2)
+
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/940d5e60-6c15-496c-8cf5-502d2b721fd5)
+
 ![image](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/assets/127288174/fdc3aa03-bb9c-4a16-91db-e2d8a22ed8f3)
 
 [General Screen Layout](https://docs.google.com/presentation/d/1J9MkQOFKmCZuKEjlQRDTo65_aweelnR4qWAHOjOCGjk/edit#slide=id.p)
@@ -53,17 +61,26 @@ Solid Design Principles:
 ## Screenshots
 > Screenshots of the input/output after running your application
 ![Difficulty Select](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Difficulty.png)
+> 
 ![Character Class Select](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Character.png)
+
 ![Battle](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Battle.png)
+
 ![Battle Victory](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/BattleVictory.png)
+
 ![LevelUp](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/LevelUp.png)
+
 ![Shop](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Shop.png)
+
 ![Inventory](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Inventory.png)
+
 ![Run](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/Run.png)
+
 ![EndStats](https://github.com/cs100/final-project-ryan-nicholas-jingbo-vansh/blob/main/EndStats.png)
 
 ## Installation/Usage
- > Instructions on installing and running your application
+Instructions on installing and running your application: 
+
 To install the program, you can create a new folder or directory in your IDE. Then you can copy all of the files in this repository into your newly created folder. Open the terminal and CD into your folder that contains the program files. Finally, because we have a file that compiles and runs the program for you, all you need to do is type sh run.sh. Enjoy! 
 
 ## Testing
